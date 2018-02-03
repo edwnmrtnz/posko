@@ -1,4 +1,4 @@
-package com.github.em4rtinez.posko;
+package com.github.edwnmrtnz.posko;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
