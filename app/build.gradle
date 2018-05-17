@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.github.edwnmrtnz.posko"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -22,6 +22,12 @@ android {
 dependencies {
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    //For Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
     implementation project(':posko-core')
 }
