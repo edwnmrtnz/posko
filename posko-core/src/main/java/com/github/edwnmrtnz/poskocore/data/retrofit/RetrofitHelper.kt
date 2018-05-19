@@ -36,11 +36,11 @@ class RetrofitHelper {
                 .baseUrl(BASE_URL)
                 .addConverterFactory(converterFactory)
         if(basicAuth != null){
-            var httpClient : OkHttpClient.Builder = OkHttpClient.Builder()
+            val httpClient : OkHttpClient.Builder = OkHttpClient.Builder()
             httpClient.addInterceptor(Interceptor {
-                var original : Request = it.request()
+                val original : Request = it.request()
 
-                var requestBuilder : Request.Builder = original.newBuilder().header("Authorization", basicAuth)
+                val requestBuilder : Request.Builder = original.newBuilder().header("Authorization", basicAuth)
                 requestBuilder.header("Accept", "application/json")
                 requestBuilder.method(original.method(), original.body())
 
