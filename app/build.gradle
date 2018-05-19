@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
@@ -20,14 +22,26 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+  // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    //For Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    //Support
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibrary"
+    implementation "com.android.support:support-v4:$rootProject.supportLibrary"
+    implementation "com.android.support:design:$rootProject.supportLibrary"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibrary"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
+
+    //Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomDatabase"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
+    kapt "android.arch.persistence.room:compiler:$rootProject.roomDatabase"
+
+    //Test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation "com.android.support.test:runner:$rootProject.testRunner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
     implementation project(':posko-core')
 }

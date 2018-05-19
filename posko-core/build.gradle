@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 27
-
-
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
@@ -27,8 +25,22 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+
+    //Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.roomDatabase"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
+    kapt "android.arch.persistence.room:compiler:$rootProject.roomDatabase"
+
+    //For Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
 }
