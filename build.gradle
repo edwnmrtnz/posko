@@ -39,4 +39,6 @@ ext {
 
     retrofit            = '2.3.0'
     okhttp3             = '3.9.1'
+
+    gson                = '2.8.4'
 }
