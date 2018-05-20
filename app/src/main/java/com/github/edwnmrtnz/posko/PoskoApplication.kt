@@ -8,7 +8,6 @@ class PoskoApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        RetrofitHelper.newInstance()
-
+        RetrofitHelper.newInstance().enableLogging(BuildConfig.DEBUG)
     }
 }

@@ -1,22 +1,22 @@
 package com.github.edwnmrtnz.poskocore.data.retrofit
 
-import com.github.edwnmrtnz.poskocore.BuildConfig
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
+import okhttp3.logging.HttpLoggingInterceptor
 
 class RetrofitHelper {
+
     companion object {
         @JvmStatic
         var INSTANCE : RetrofitHelper? = null
 
         @JvmStatic
-        fun newInstance(){
-            if(INSTANCE == null)
+        fun newInstance() : RetrofitHelper{
+            if(INSTANCE == null){
                 INSTANCE = RetrofitHelper()
+            }
+            return INSTANCE as RetrofitHelper
         }
 
         @JvmStatic
@@ -29,30 +29,46 @@ class RetrofitHelper {
         fun destroyInstance() {
             if(INSTANCE != null) INSTANCE = null
         }
+
+
     }
 
-    fun <S> createService(BASE_URL : String, basicAuth : String?, serviceClass : Class<S>, converterFactory : Converter.Factory) : S {
-        val builder : Retrofit.Builder = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(converterFactory)
-        if(basicAuth != null){
-            val httpClient : OkHttpClient.Builder = OkHttpClient.Builder()
-            httpClient.addInterceptor(Interceptor {
-                val original : Request = it.request()
+    private var enableLogging : Boolean = false
 
-                val requestBuilder : Request.Builder = original.newBuilder().header("Authorization", basicAuth)
+    fun enableLogging(value : Boolean){
+        this.enableLogging = value
+    }
+
+    fun <S> createService(BASE_URL: String, basicAuth: String?, serviceClass: Class<S>, factory: Converter.Factory): S {
+
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
+
+        val builder = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(factory)
+
+        val httpclient = OkHttpClient.Builder()
+        if (basicAuth != null) {
+
+            httpclient.addInterceptor { chain ->
+                val original = chain.request()
+
+                val requestBuilder = original.newBuilder().header("Authorization", basicAuth)
                 requestBuilder.header("Accept", "application/json")
                 requestBuilder.method(original.method(), original.body())
 
-                val request : Request = requestBuilder.build()
-                it.proceed(request)
-            })
-
-            val client : OkHttpClient = httpClient.build()
-            builder.client(client)
+                val request = requestBuilder.build()
+                chain.proceed(request)
+            }
         }
 
-        return builder.build().create(serviceClass);
+        if(enableLogging) httpclient.interceptors().add(interceptor)
+
+        val client = httpclient.build()
+        builder.client(client)
+
+        return builder.build().create(serviceClass)
     }
 
 }
