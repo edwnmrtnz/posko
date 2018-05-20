@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -24,7 +24,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-  // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':posko-core')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Support
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibrary"
@@ -43,7 +45,8 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$rootProject.testRunner"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
-    implementation project(':posko-core')
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
 }
 repositories {
     mavenCentral()
