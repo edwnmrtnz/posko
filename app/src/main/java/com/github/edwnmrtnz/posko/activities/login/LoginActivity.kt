@@ -6,12 +6,12 @@ import android.util.Log
 import com.github.edwnmrtnz.posko.BaseActivity
 import com.github.edwnmrtnz.posko.R
 import com.github.edwnmrtnz.poskocore.SessionHelper
-import com.github.edwnmrtnz.poskocore.data.model.User
-import com.github.edwnmrtnz.poskocore.data.repository.user.UserDataSource
-import com.github.edwnmrtnz.poskocore.data.repository.user.UserLocalDataSource
-import com.github.edwnmrtnz.poskocore.data.repository.user.UserRemoteDataSource
-import com.github.edwnmrtnz.poskocore.data.repository.user.UserRepository
-import com.github.edwnmrtnz.poskocore.data.retrofit.RetrofitHelper
+import com.github.edwnmrtnz.posko.data.model.User
+import com.github.edwnmrtnz.posko.data.repository.user.UserDataSource
+import com.github.edwnmrtnz.posko.data.repository.user.UserLocalDataSource
+import com.github.edwnmrtnz.posko.data.repository.user.UserRemoteDataSource
+import com.github.edwnmrtnz.posko.data.repository.user.UserRepository
+import com.github.edwnmrtnz.posko.data.retrofit.RetrofitHelper
 import com.google.gson.GsonBuilder
 
 class LoginActivity : BaseActivity() {

@@ -19,13 +19,40 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "mock"
+
+    productFlavors {
+
+        mock {
+            dimension = "mock"
+            applicationIdSuffix = ".debug"
+        }
+
+        staging {
+            applicationIdSuffix = ".debug"
+            versionName "0.0.1"
+            versionCode 1
+        }
+
+        production {
+            versionName "0.0.1"
+            versionCode 1
+        }
+    }
+
+    android.variantFilter { variant ->
+        if(variant.buildType.name.equals('release')
+                && variant.getFlavors().get(0).name.equals('mock')) {
+            variant.setIgnore(true);
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation project(':posko-core')
-
+    
+    //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Support
@@ -40,9 +67,36 @@ dependencies {
     implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
     kapt "android.arch.persistence.room:compiler:$rootProject.roomDatabase"
 
-    //Test
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation "com.android.support.test:runner:$rootProject.testRunner"
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+
+    //For Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
+
+
+    //Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
+
+    // Required for local unit tests
+    testCompile 'junit:junit:4.12'
+
+    testCompile "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
+    testCompile "org.powermock:powermock-module-junit4:$rootProject.powerMockito"
+    testCompile "org.powermock:powermock-api-mockito:$rootProject.powerMockito"
+
+    testCompile "org.mockito:mockito-core:$rootProject.mockito"
+    androidTestCompile "org.mockito:mockito-android:$rootProject.mockito"
+    
+    // Required for instrumented tests
+    androidTestCompile 'com.android.support:support-annotations:27.1.1'
+    androidTestCompile "com.android.support.test:runner:$rootProject.testRunner"
+    
+    //Espresso
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
     implementation "com.google.code.gson:gson:$rootProject.gson"
