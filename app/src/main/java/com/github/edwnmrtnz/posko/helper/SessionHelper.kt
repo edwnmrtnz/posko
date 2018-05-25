@@ -1,4 +1,4 @@
-package com.github.edwnmrtnz.posko
+package com.github.edwnmrtnz.posko.helper
 
 import com.github.edwnmrtnz.posko.data.model.User
 import com.github.edwnmrtnz.posko.data.repository.user.UserDataSource

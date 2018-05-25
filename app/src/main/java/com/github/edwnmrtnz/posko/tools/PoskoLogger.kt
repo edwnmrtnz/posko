@@ -1,4 +1,4 @@
-package com.github.edwnmrtnz.posko
+package com.github.edwnmrtnz.posko.tools
 
 import android.util.Log
 

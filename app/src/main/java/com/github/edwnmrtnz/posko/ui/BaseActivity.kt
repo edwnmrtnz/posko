@@ -1,8 +1,8 @@
-package com.github.edwnmrtnz.posko
+package com.github.edwnmrtnz.posko.ui
 
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.Toast
+import com.github.edwnmrtnz.posko.tools.PoskoLogger
 import com.github.edwnmrtnz.poskocore.PoskoLogger
 
 abstract class BaseActivity : AppCompatActivity() {

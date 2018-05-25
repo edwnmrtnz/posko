@@ -1,9 +1,7 @@
-package com.github.edwnmrtnz.posko.activities.login
+package com.github.edwnmrtnz.posko.ui.activities.login
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.github.edwnmrtnz.posko.BaseActivity
+import com.github.edwnmrtnz.posko.ui.BaseActivity
 import com.github.edwnmrtnz.posko.R
 import com.github.edwnmrtnz.poskocore.SessionHelper
 import com.github.edwnmrtnz.posko.data.model.User

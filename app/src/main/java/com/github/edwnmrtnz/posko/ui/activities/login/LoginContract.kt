@@ -1,4 +1,4 @@
-package com.github.edwnmrtnz.posko.activities.login
+package com.github.edwnmrtnz.posko.ui.activities.login
 
 interface LoginContract {
 
