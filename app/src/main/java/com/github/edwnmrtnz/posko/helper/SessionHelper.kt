@@ -4,7 +4,7 @@ import com.github.edwnmrtnz.posko.data.model.User
 import com.github.edwnmrtnz.posko.data.repository.user.UserDataSource
 import com.github.edwnmrtnz.posko.data.repository.user.UserRepository
 
-class SessionHelper (val userRepository: UserRepository) {
+class SessionHelper (private val userRepository: UserRepository) {
 
     fun isLoggedIn() : Boolean {
         return false
@@ -21,5 +21,4 @@ class SessionHelper (val userRepository: UserRepository) {
             }
         })
     }
-
 }

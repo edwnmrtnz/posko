@@ -12,6 +12,11 @@ import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 
 class UserRemoteDataSource(private val retrofitHelper: RetrofitHelper, private val gsonBuilder : GsonBuilder) : UserDataSource {
+
+    override fun saveUser(user: User) {
+        //Implementation goes to local data source
+    }
+
     private val BASE_URL = "http://192.168.1.106:3000"
 
     override fun authenticateUser(account_name: String, email: String, password: String, callback: UserDataSource.AuthenticateUserCallback) {

@@ -1,10 +1,27 @@
 package com.github.edwnmrtnz.posko.data.repository.user
 
-class UserRepository(val userLocalDataSource: UserDataSource,
-                     val userRemoteDataSource: UserDataSource) : UserDataSource {
+import com.github.edwnmrtnz.posko.data.model.User
+
+class UserRepository(private val userLocalDataSource: UserDataSource,
+                     private val userRemoteDataSource: UserDataSource) : UserDataSource {
 
     override fun authenticateUser(account_name: String, email: String, password: String, callback: UserDataSource.AuthenticateUserCallback) {
-        userRemoteDataSource.authenticateUser(account_name, email, password, callback)
+
+        userRemoteDataSource.authenticateUser(account_name, email, password, object : UserDataSource.AuthenticateUserCallback {
+
+            override fun onAuthenticated(user: User) {
+                saveUser(user)
+                callback.onAuthenticated(user)
+            }
+
+            override fun onFailed(message: String, statusCode: Int) {
+                callback.onFailed(message, statusCode)
+            }
+        })
+    }
+
+    override fun saveUser(user: User) {
+        userLocalDataSource.saveUser(user)
     }
 
     companion object {
