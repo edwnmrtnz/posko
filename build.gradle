@@ -35,6 +35,7 @@ ext {
     roomDatabase        = '1.1.0'
 
     testRunner          = '1.0.2'
+    testRule            = '1.0.2'
     espresso            = '3.0.2'
 
     retrofit            = '2.3.0'
