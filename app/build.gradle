@@ -7,7 +7,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.github.edwnmrtnz.posko"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -37,7 +37,7 @@ android {
     }
 
     android.variantFilter { variant ->
-        if(variant.buildType.name.equals('release')
+        if (variant.buildType.name.equals('release')
                 && variant.getFlavors().get(0).name.equals('mock')) {
             variant.setIgnore(true)
         }
@@ -46,7 +46,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    
+
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
@@ -60,6 +60,7 @@ dependencies {
     //Room
     implementation "android.arch.persistence.room:runtime:$rootProject.roomDatabase"
     implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
+    implementation 'com.android.support:support-v4:27.1.1'
     kapt "android.arch.persistence.room:compiler:$rootProject.roomDatabase"
 
     //RxJava
@@ -72,10 +73,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
 
-
     //Gson
     implementation "com.google.code.gson:gson:$rootProject.gson"
-
 
     // Required for local unit tests
     testCompile 'junit:junit:4.12'
@@ -90,7 +89,7 @@ dependencies {
     // Required for instrumented tests
     androidTestCompile 'com.android.support:support-annotations:27.1.1'
     androidTestCompile "com.android.support.test:runner:$rootProject.testRunner"
-    
+
     //Espresso
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
