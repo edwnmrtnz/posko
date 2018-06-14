@@ -1,1 +1,1 @@
-include ':app', ':posko-core'
+include ':app', ':poskocore'
