@@ -8,7 +8,7 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
-class ServiceGenerator(private var baseUrl: String,
+class ServiceGenerator private constructor(private var baseUrl: String,
                        private var enableLogging: Boolean,
                        private var loggingTag: String,
                        private var loggingLevel: HttpLoggingInterceptor.Level,
