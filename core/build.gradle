@@ -73,6 +73,11 @@ dependencies {
     androidTestCompile 'com.android.support:support-annotations:28.0.0'
     androidTestCompile "com.android.support.test:runner:$rootProject.testRunner"
 
+    implementation "com.google.dagger:dagger:2.17"
+    kapt "com.google.dagger:dagger-compiler:2.17"
+    kapt "com.google.dagger:dagger-android-processor:2.17"
+    implementation "com.google.dagger:dagger-android-support:2.17"
+
     //Espresso
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
