@@ -1,4 +1,4 @@
-package com.github.posko.core.data.api.deserializer.user
+package com.github.posko.core.data.api.deserializer
 
 import com.github.posko.core.data.api.model.UserRaw
 import com.google.gson.*

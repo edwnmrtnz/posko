@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "account_id": 1,
+            "title": "Small Leather Clock",
+            "vendor": null,
+            "handle": "small-leather-clock",
+            "product_type": "regular",
+            "status": "active",
+            "product_status": 0,
+            "created_by_id": 1,
+            "created_at": "2018-09-28T12:37:34.995Z",
+            "updated_at": "2018-09-28T12:37:34.995Z",
+            "handle_count": 0
+        },
+        {
+            "id": 2,
+            "account_id": 1,
+            "title": "Aerodynamic Rubber Table",
+            "vendor": null,
+            "handle": "aerodynamic-rubber-table",
+            "product_type": "regular",
+            "status": "active",
+            "product_status": 0,
+            "created_by_id": 1,
+            "created_at": "2018-09-28T12:37:35.029Z",
+            "updated_at": "2018-09-28T12:37:35.029Z",
+            "handle_count": 0
+        },
+        {
+            "id": 3,
+            "account_id": 1,
+            "title": "Small Bronze Watch",
+            "vendor": null,
+            "handle": "small-bronze-watch",
+            "product_type": "regular",
+            "status": "active",
+            "product_status": 0,
+            "created_by_id": 1,
+            "created_at": "2018-09-28T12:37:35.038Z",
+            "updated_at": "2018-09-28T12:37:35.038Z",
+            "handle_count": 0
+        }
+    ]
+}

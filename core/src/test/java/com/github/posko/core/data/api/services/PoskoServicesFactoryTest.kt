@@ -3,10 +3,15 @@
 package com.github.posko.core.data.api.services
 
 import com.github.posko.core.AssetReader
+import com.github.posko.core.UnitTest
 import com.github.posko.core.data.api.config.ServiceConfigProvider
+import com.github.posko.core.data.api.deserializer.ProductsDeserializer
+import com.github.posko.core.data.api.endpoints.ProductsServicesApi
 import com.github.posko.core.data.api.generator.Encryptor
 import com.github.posko.core.data.api.generator.ServiceLogger
+import com.github.posko.core.data.api.model.ProductRaw
 import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
@@ -18,9 +23,12 @@ import kotlinx.coroutines.experimental.runBlocking
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import org.mockito.Spy
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class PoskoServicesFactoryTest {
+
+class PoskoServicesFactoryTest : UnitTest() {
 
     private lateinit var server : MockWebServer
     private lateinit var services : PoskoServicesFactory
@@ -47,9 +55,6 @@ class PoskoServicesFactoryTest {
         server.shutdown()
     }
 
-    private fun print(any : Any) {
-        System.out.println(GsonBuilder().setPrettyPrinting().create().toJson(any))
-    }
 
     @Test
     fun `should return a valid user after login`() = runBlocking {
@@ -62,8 +67,24 @@ class PoskoServicesFactoryTest {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(userRaw))
 
-        val result = services.login("hello", "hello", "hello").await()
+        val result = services.login("hello", "hello", "hello").await().body()
 
-        print(result)
+        doPrint(result!!)
+    }
+
+    @Test
+    fun `should return a valid list of products`() = runBlocking {
+
+        val config = ServiceConfigProvider(server.url("/api/v1/products/").toString(), encryptor, logger)
+
+        services = PoskoServicesFactory(config)
+
+        val productsRaw = AssetReader.readJsonFile("stubs/products.txt")
+
+        server.enqueue(MockResponse().setResponseCode(200).setBody(productsRaw))
+
+        val result = services.getProducts().await().body()
+
+        doPrint(result!!)
     }
 }

@@ -1,15 +1,16 @@
-package com.github.posko.core.data.api.deserializer.user
+package com.github.posko.core.data.api.deserializer
 
 import com.github.posko.core.AssetReader
+import com.github.posko.core.UnitTest
 import com.github.posko.core.data.api.model.UserRaw
 import com.google.gson.GsonBuilder
 import org.junit.Assert.*
 import org.junit.Test
 
-class UserDeserializerTest {
+class UserDeserializerTest : UnitTest() {
 
     @Test
-    fun deserialize() {
+    fun `should be able to deserialize user`() {
 
         val gson = GsonBuilder().setPrettyPrinting().registerTypeAdapter(UserRaw::class.java, UserDeserializer()).create();
 
@@ -17,6 +18,8 @@ class UserDeserializerTest {
 
         assertNotNull(user)
 
-        System.out.println(gson.toJson(user))
+        assertEquals("admin@first_company.com", user.email)
+
+        doPrint(user)
     }
 }
