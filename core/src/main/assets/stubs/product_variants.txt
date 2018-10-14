@@ -1,0 +1,40 @@
+{
+    "variants": [
+        {
+            "id": 1,
+            "product_id": 1,
+            "parent_product_id": null,
+            "parent_variant_id": null,
+            "title": "Orchid Small Leather Clock",
+            "sku": "000002",
+            "price": "138.0",
+            "compare_at_price": "208.0",
+            "barcode": "B000002",
+            "variant_type": "regular",
+            "variant_status": 0,
+            "status": "active",
+            "created_at": "2018-09-28T12:37:35.020Z",
+            "updated_at": "2018-09-28T12:37:35.020Z",
+            "selling_policy": "each",
+            "cost": null
+        },
+        {
+            "id": 2,
+            "product_id": 1,
+            "parent_product_id": null,
+            "parent_variant_id": null,
+            "title": "Black Small Leather Clock",
+            "sku": "000003",
+            "price": "149.0",
+            "compare_at_price": "293.0",
+            "barcode": "B000003",
+            "variant_type": "regular",
+            "variant_status": 0,
+            "status": "active",
+            "created_at": "2018-09-28T12:37:35.024Z",
+            "updated_at": "2018-09-28T12:37:35.024Z",
+            "selling_policy": "each",
+            "cost": null
+        }
+    ]
+}

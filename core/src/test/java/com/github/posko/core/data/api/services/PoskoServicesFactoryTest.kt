@@ -87,4 +87,19 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         doPrint(result!!)
     }
+
+    @Test
+    fun `should return a valid list of product variants given a product id`() = runBlocking {
+        val config = ServiceConfigProvider(server.url("/api/v1/products/1/variants/").toString(), encryptor, logger)
+
+        services = PoskoServicesFactory(config)
+
+        val productsVariantsRaw = AssetReader.readJsonFile("stubs/product_variants.txt")
+
+        server.enqueue(MockResponse().setResponseCode(200).setBody(productsVariantsRaw))
+
+        val result = services.getProductVariants(1).await()
+
+        doPrint(result!!)
+    }
 }
