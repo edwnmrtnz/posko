@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pos/pos.iml" filepath="$PROJECT_DIR$/pos/pos.iml" />
       <module fileurl="file://$PROJECT_DIR$/posko-android.iml" filepath="$PROJECT_DIR$/posko-android.iml" />
     </modules>
   </component>
