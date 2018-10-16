@@ -1,0 +1,38 @@
+{
+    "invoice_lines": [
+        {
+            "id": 1,
+            "invoice_id": 1,
+            "variant_id": 1,
+            "product_id": 1,
+            "title": "Test",
+            "sku": null,
+            "price": "101.0",
+            "compare_at_price": null,
+            "barcode": null,
+            "invoice_line_status": 0,
+            "status": "active",
+            "created_at": "2018-10-14T05:48:09.976Z",
+            "updated_at": "2018-10-14T05:48:09.976Z",
+            "quantity": "2.0",
+            "weight": "0.0"
+        },
+        {
+            "id": 2,
+            "invoice_id": 1,
+            "variant_id": 3,
+            "product_id": 2,
+            "title": "Test",
+            "sku": null,
+            "price": "101.0",
+            "compare_at_price": null,
+            "barcode": null,
+            "invoice_line_status": 0,
+            "status": "active",
+            "created_at": "2018-10-14T05:48:09.980Z",
+            "updated_at": "2018-10-14T05:48:09.980Z",
+            "quantity": "1.0",
+            "weight": "0.0"
+        }
+    ]
+}
