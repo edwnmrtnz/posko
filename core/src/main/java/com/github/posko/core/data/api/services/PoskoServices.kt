@@ -1,12 +1,10 @@
 package com.github.posko.core.data.api.services
 
-import com.github.posko.core.data.api.model.InvoiceRaw
-import com.github.posko.core.data.api.model.ProductRaw
-import com.github.posko.core.data.api.model.ProductVariantRaw
-import com.github.posko.core.data.api.model.UserRaw
+import com.github.posko.core.data.api.model.*
 import kotlinx.coroutines.experimental.Deferred
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Path
 
 interface PoskoServices {
 
@@ -18,4 +16,5 @@ interface PoskoServices {
 
     fun getInvoices() : Deferred<Response<List<InvoiceRaw>>>
 
+    fun getInvoiceLines(invoice_id: Int) : Deferred<Response<List<InvoiceLineRaw>>>
 }

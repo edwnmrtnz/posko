@@ -121,4 +121,23 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         doPrint(result)
     }
+
+    @Test
+    fun `should return a valid list invoice lines given an invoice id` () =  runBlocking {
+        val config = ServiceConfigProvider(server.url("api/v1/invoices/1/invoice_lines/").toString(), encryptor, logger)
+
+        services = PoskoServicesFactory(config)
+
+        val invoiceLinesRaw = AssetReader.readJsonFile("stubs/invoice_lines.txt")
+
+        server.enqueue(MockResponse().setResponseCode(200).setBody(invoiceLinesRaw))
+
+        val result = services.getInvoiceLines(1).await().body()
+
+        assertNotNull(result)
+
+        assertEquals(2, result!!.size)
+
+        doPrint(result)
+    }
 }

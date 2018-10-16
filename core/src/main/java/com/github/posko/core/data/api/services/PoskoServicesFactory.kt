@@ -2,18 +2,9 @@ package com.github.posko.core.data.api.services
 
 import android.util.Log
 import com.github.posko.core.data.api.config.ServiceConfiguration
-import com.github.posko.core.data.api.deserializer.InvoiceDeserializer
-import com.github.posko.core.data.api.deserializer.ProductVariantsDeserializer
-import com.github.posko.core.data.api.deserializer.ProductsDeserializer
-import com.github.posko.core.data.api.deserializer.UserDeserializer
-import com.github.posko.core.data.api.endpoints.InvoiceServicesApi
-import com.github.posko.core.data.api.endpoints.ProductVariantsServicesApi
-import com.github.posko.core.data.api.endpoints.ProductsServicesApi
-import com.github.posko.core.data.api.endpoints.UserServicesApi
-import com.github.posko.core.data.api.model.InvoiceRaw
-import com.github.posko.core.data.api.model.ProductRaw
-import com.github.posko.core.data.api.model.ProductVariantRaw
-import com.github.posko.core.data.api.model.UserRaw
+import com.github.posko.core.data.api.deserializer.*
+import com.github.posko.core.data.api.endpoints.*
+import com.github.posko.core.data.api.model.*
 import com.github.posko.core.domain.model.User
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
@@ -82,6 +73,21 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .generateService(InvoiceServicesApi::class.java)
                 .getInvoices()
     }
+
+    override fun getInvoiceLines(invoice_id: Int): Deferred<Response<List<InvoiceLineRaw>>> {
+        val listype = object : TypeToken<MutableList<InvoiceLineRaw>>() {}.type
+        val gson = gsonBuilder
+                .registerTypeAdapter(listype, InvoiceLineDeserializer())
+                .create()
+        return config
+                .getConfig()
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .setEnableLogging("get_invoice_lines")
+                .build()
+                .generateService(InvoiceLinesServicesApi::class.java)
+                .getInvoiceLines(invoice_id)
+    }
+
 
 
     companion object {
