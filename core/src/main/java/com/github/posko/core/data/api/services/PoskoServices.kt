@@ -1,5 +1,6 @@
 package com.github.posko.core.data.api.services
 
+import com.github.posko.core.data.api.model.InvoiceRaw
 import com.github.posko.core.data.api.model.ProductRaw
 import com.github.posko.core.data.api.model.ProductVariantRaw
 import com.github.posko.core.data.api.model.UserRaw
@@ -14,4 +15,7 @@ interface PoskoServices {
     fun getProducts() : Deferred<Response<List<ProductRaw>>>
 
     fun getProductVariants(product_id : Int) : Deferred<Response<List<ProductVariantRaw>>>
+
+    fun getInvoices() : Deferred<Response<List<InvoiceRaw>>>
+
 }

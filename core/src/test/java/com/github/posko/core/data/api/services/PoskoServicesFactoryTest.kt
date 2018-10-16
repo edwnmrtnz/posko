@@ -26,6 +26,7 @@ import org.mockito.MockitoAnnotations
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import org.junit.Assert.*
 
 
 class PoskoServicesFactoryTest : UnitTest() {
@@ -98,8 +99,26 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(productsVariantsRaw))
 
-        val result = services.getProductVariants(1).await()
+        val result = services.getProductVariants(1).await().body()
 
         doPrint(result!!)
+    }
+
+    @Test
+    fun `should return a valid list of invoice`() = runBlocking {
+        val config = ServiceConfigProvider(server.url("/api/v1/invoices/").toString(), encryptor, logger)
+
+        services = PoskoServicesFactory(config)
+
+        val invoicesRaw = AssetReader.readJsonFile("stubs/invoices.txt")
+
+        server.enqueue(MockResponse().setResponseCode(200).setBody(invoicesRaw))
+
+        val result = services.getInvoices().await().body()
+
+        assertNotNull(result)
+        assertEquals(3, result!!.size)
+
+        doPrint(result)
     }
 }

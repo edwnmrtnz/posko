@@ -2,12 +2,15 @@ package com.github.posko.core.data.api.services
 
 import android.util.Log
 import com.github.posko.core.data.api.config.ServiceConfiguration
+import com.github.posko.core.data.api.deserializer.InvoiceDeserializer
 import com.github.posko.core.data.api.deserializer.ProductVariantsDeserializer
 import com.github.posko.core.data.api.deserializer.ProductsDeserializer
 import com.github.posko.core.data.api.deserializer.UserDeserializer
+import com.github.posko.core.data.api.endpoints.InvoiceServicesApi
 import com.github.posko.core.data.api.endpoints.ProductVariantsServicesApi
 import com.github.posko.core.data.api.endpoints.ProductsServicesApi
 import com.github.posko.core.data.api.endpoints.UserServicesApi
+import com.github.posko.core.data.api.model.InvoiceRaw
 import com.github.posko.core.data.api.model.ProductRaw
 import com.github.posko.core.data.api.model.ProductVariantRaw
 import com.github.posko.core.data.api.model.UserRaw
@@ -65,6 +68,21 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .generateService(ProductVariantsServicesApi::class.java)
                 .getProductVariants(product_id)
     }
+
+    override fun getInvoices(): Deferred<Response<List<InvoiceRaw>>> {
+        val listType = object : TypeToken<MutableList<InvoiceRaw>>() {}.type
+        val gson = gsonBuilder
+                .registerTypeAdapter(listType, InvoiceDeserializer())
+                .create()
+        return config
+                .getConfig()
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .setEnableLogging("get_invoices")
+                .build()
+                .generateService(InvoiceServicesApi::class.java)
+                .getInvoices()
+    }
+
 
     companion object {
         const val TAG = "PoskoServicesFactory"
