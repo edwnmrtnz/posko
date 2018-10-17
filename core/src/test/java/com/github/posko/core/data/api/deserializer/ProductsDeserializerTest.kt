@@ -19,7 +19,7 @@ class ProductsDeserializerTest : UnitTest() {
                 .create()
 
         val products : List<ProductRaw> = gson.fromJson(
-                AssetReader.readJsonFile("/stubs/products.txt"), listType
+                readFile("stubs/products.txt"), listType
         )
 
         assertNotNull(products)

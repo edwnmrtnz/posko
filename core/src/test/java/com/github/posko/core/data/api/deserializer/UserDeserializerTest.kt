@@ -14,7 +14,7 @@ class UserDeserializerTest : UnitTest() {
 
         val gson = GsonBuilder().setPrettyPrinting().registerTypeAdapter(UserRaw::class.java, UserDeserializer()).create();
 
-        val user = gson.fromJson(AssetReader.readJsonFile("/stubs/user_sign_in.txt"), UserRaw::class.java);
+        val user = gson.fromJson(readFile("stubs/user_sign_in.txt"), UserRaw::class.java);
 
         assertNotNull(user)
 

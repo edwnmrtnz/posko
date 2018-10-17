@@ -18,10 +18,7 @@ class InvoiceDeserializerTest : UnitTest() {
                 .registerTypeAdapter(listType, InvoiceDeserializer())
                 .create()
 
-
-        val invoices : List<InvoiceRaw> = gson.fromJson(
-                AssetReader.readJsonFile("/stubs/invoices.txt"), listType
-        )
+        val invoices : List<InvoiceRaw> = gson.fromJson(readFile("/stubs/invoices.txt"), listType)
 
         assertNotNull(invoices)
 

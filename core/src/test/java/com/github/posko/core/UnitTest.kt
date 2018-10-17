@@ -9,4 +9,8 @@ open class UnitTest {
     protected fun doPrint(any : Any) {
         System.out.println(gsonBuilder.create().toJson(any))
     }
+
+    protected fun readFile(fileNameWithExt: String) : String {
+        return AssetReader.readJsonFile(fileNameWithExt)
+    }
 }

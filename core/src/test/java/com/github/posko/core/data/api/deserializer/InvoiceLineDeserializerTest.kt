@@ -18,7 +18,7 @@ class InvoiceLineDeserializerTest : UnitTest() {
                 .create()
 
         val invoiceLines : List<InvoiceLineRaw> =
-                gson.fromJson(AssetReader.readJsonFile("stubs/invoice_lines.txt"), listype)
+                gson.fromJson(readFile("stubs/invoice_lines.txt"), listype)
 
         assertNotNull(invoiceLines)
 
