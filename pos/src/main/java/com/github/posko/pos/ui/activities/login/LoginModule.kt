@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-abstract class LoginActivityModule {
+abstract class LoginModule {
 
     @FragmentScoped
     @ContributesAndroidInjector

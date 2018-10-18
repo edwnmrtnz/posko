@@ -11,9 +11,9 @@ import android.view.ViewGroup
 
 import com.github.posko.pos.R
 import com.github.posko.pos.ui.activities.home.HomeActivity
+import javax.inject.Inject
 
-class LoginFragment : Fragment(), LoginContract.View {
-
+class LoginFragment @Inject constructor(): Fragment (), LoginContract.View {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
