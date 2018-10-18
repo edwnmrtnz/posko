@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="AppTheme" parent="ParentAppTheme">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:colorControlNormal">@color/colorAccent</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="MaterialStatusBar" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="LightTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/faded_gray</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="EditTextTheme" parent="AppTheme">
+        <item name="android:colorControlNormal">@color/faded_gray</item>
+        <item name="android:colorControlHighlight">@color/faded_gray</item>
+    </style>
+
+
+</resources>

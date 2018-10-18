@@ -1,11 +1,53 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="ParentAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:textColor">@color/textColorNormal</item>
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="ParentAppTheme">
+        <item name="actionButtonStyle">@style/ActionButtonStyle</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:maxWidth">50dip</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+    </style>
+
+
+    <style name="ToolbarTheme" parent="ParentAppTheme">
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:colorBackground">@color/textColorPrimary</item>
+        <!-- Color for overflow menu for isntance -->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="PopupTheme" parent="ParentAppTheme">
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="colorAccent">@color/textColorPrimary</item>
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <style name="EditTextTheme" parent="AppTheme"/>
+
+    <style name="MaterialStatusBar" parent="AppTheme"/>
+    <style name="LightTheme" parent="AppTheme"/>
+
+    <style name="ButtonTransparentTheme">
+        <item name="colorButtonNormal">@android:color/transparent</item>
     </style>
 
 </resources>

@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">pos</string>
+    <string name="app_name">posko</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="display_app_name">posko</string>
+
+    <string name="login_account_name">Account Name</string>
+    <string name="login_password">Password</string>
+    <string name="login_email_address">Email Address</string>
+    <string name="action_login">LOGIN</string>
+    <string name="sample_app_version">v0.0.0.0</string>
 </resources>
