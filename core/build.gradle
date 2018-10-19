@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 28
@@ -28,6 +31,10 @@ dependencies {
     //Kotlin
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //Support annotations
+    api "com.android.support:support-annotations:$rootProject.supportLibrary"
+
+
     //Room
     implementation "android.arch.persistence.room:runtime:$rootProject.roomDatabase"
     implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
@@ -51,11 +58,6 @@ dependencies {
     //Gson
     implementation "com.google.code.gson:gson:$rootProject.gson"
 
-    //Dagger
-    api "com.google.dagger:dagger:2.17"
-    kapt "com.google.dagger:dagger-compiler:2.17"
-    kapt "com.google.dagger:dagger-android-processor:2.17"
-    api "com.google.dagger:dagger-android-support:2.17"
 
     //Mock web server
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
@@ -66,7 +68,6 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$rootProject.mockito"
     testImplementation "org.mockito:mockito-android:$rootProject.mockito"
     // Required for instrumented tests
-    testImplementation "com.android.support:support-annotations:$rootProject.supportLibrary"
     testImplementation "com.android.support.test:runner:$rootProject.testRunner"
     testImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
 
