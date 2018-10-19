@@ -10,4 +10,5 @@
     <string name="login_email_address">Email Address</string>
     <string name="action_login">LOGIN</string>
     <string name="sample_app_version">v0.0.0.0</string>
+    <string name="login_sign_in">Sign In</string>
 </resources>
