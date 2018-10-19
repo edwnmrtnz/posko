@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">posko</string>
 
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="display_app_name">posko</string>
@@ -11,4 +15,11 @@
     <string name="action_login">LOGIN</string>
     <string name="sample_app_version">v0.0.0.0</string>
     <string name="login_sign_in">Sign In</string>
+    <string name="sample_name">Edwin Martinez Jr</string>
+    <string name="sample_email">dev.edwinmartinez@gmai.com</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_tickets">Tickets</string>
+    <string name="menu_favorites">Favorites</string>
 </resources>

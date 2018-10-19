@@ -27,9 +27,9 @@
 
 
     <style name="ToolbarTheme" parent="ParentAppTheme">
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/textColorSecondary</item>
-        <item name="android:colorBackground">@color/textColorPrimary</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
         <!-- Color for overflow menu for isntance -->
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -37,7 +37,7 @@
 
     <style name="PopupTheme" parent="ParentAppTheme">
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="colorAccent">@color/textColorPrimary</item>
+        <item name="colorAccent">@color/white</item>
         <item name="android:colorBackground">@color/white</item>
     </style>
 

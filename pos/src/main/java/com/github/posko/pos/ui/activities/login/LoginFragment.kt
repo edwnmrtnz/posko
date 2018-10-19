@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.AppCompatButton
+import android.support.v7.widget.AppCompatEditText
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,9 +17,27 @@ import javax.inject.Inject
 
 class LoginFragment @Inject constructor(): Fragment (), LoginContract.View {
 
+    private lateinit var btnLogin : AppCompatButton
+    private lateinit var etAccountName : AppCompatEditText
+    private lateinit var etEmailAddress: AppCompatEditText
+    private lateinit var etPassword : AppCompatEditText
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val view = inflater.inflate(R.layout.fragment_login, container, false)
+
+        with(view) {
+            btnLogin        = findViewById(R.id.btn_login)
+            etAccountName   = findViewById(R.id.et_account_name)
+            etEmailAddress  = findViewById(R.id.et_email_address)
+            etPassword      = findViewById(R.id.et_password)
+        }
+
+        btnLogin.setOnClickListener {
+            showHomeActivity()
+        }
+
+        return view
     }
 
     override fun showHomeActivity() {

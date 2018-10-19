@@ -2,6 +2,7 @@ package com.github.posko.pos.injection.modules
 
 import com.github.posko.pos.injection.annotations.ActivityScoped
 import com.github.posko.pos.ui.activities.home.HomeActivity
+import com.github.posko.pos.ui.activities.home.HomeModule
 import com.github.posko.pos.ui.activities.login.LoginActivity
 import com.github.posko.pos.ui.activities.login.LoginModule
 import dagger.Module
@@ -15,6 +16,6 @@ abstract class ActivityBindings {
     abstract fun loginActivity() : LoginActivity
 
     @ActivityScoped
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [HomeModule::class])
     abstract fun homeActivity() : HomeActivity
 }
