@@ -11,7 +11,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "0.0.0.0"
-
+        buildConfigField "long", "BUILD_TIME", System.currentTimeMillis() + "L"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -19,6 +19,30 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        mock {
+            dimension "default"
+            applicationIdSuffix = ".mock"
+            versionNameSuffix = "-mock"
+            resValue "string", "flavored_app_name", "Mock POSko"
+            buildConfigField("String", "SERVER", "\"http://192.168.10.100:3000\"")
+        }
+
+        prod {
+            dimension "default"
+            resValue "string", "flavored_app_name", "POSko"
+            buildConfigField("String", "SERVER", "\"http://192.168.10.100:3000\"")
+        }
+
+        android.variantFilter { variant ->
+
+            if (variant.getFlavors().get(0).name.toLowerCase().contains("mock") && variant.buildType.name == 'release') {
+                variant.setIgnore(true)
+            }
         }
     }
 
