@@ -1,4 +1,10 @@
 package com.github.posko.core.domain.gateways
 
-class UserGateway {
+import com.github.posko.core.domain.model.User
+import com.github.posko.core.domain.result.Either
+import com.github.posko.core.domain.result.Error
+
+interface UserGateway {
+
+    suspend fun login(account_name : String, email : String, password : String) : Either<Error, User>
 }
