@@ -9,17 +9,17 @@ import android.arch.persistence.room.PrimaryKey
 data class SessionData (
 
         @PrimaryKey
-        private var id : String,
+        var id : String,
 
-        private var domain : String,
+        var domain : String,
 
         @ColumnInfo(name = "session_for")
-        private var sessionFor : String,
+        var sessionFor : String,
 
         @ColumnInfo(name = "auth_token")
-        private var authToken : String,
+        var authToken : String,
 
         @ColumnInfo(name = "token")
-        private var token : String
+        var token : String
 
 )
