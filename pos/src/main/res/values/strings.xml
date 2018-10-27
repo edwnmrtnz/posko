@@ -22,4 +22,6 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_tickets">Tickets</string>
     <string name="menu_favorites">Favorites</string>
+    <string name="hint_search_item">Search Item</string>
+    <string name="posko">posko</string>
 </resources>

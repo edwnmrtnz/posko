@@ -24,12 +24,13 @@
         </activity>
 
         <activity
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             android:theme="@style/LightTheme"
             android:screenOrientation="portrait"
             android:name=".ui.activities.login.LoginActivity"/>
 
         <activity
+            android:windowSoftInputMode="stateUnchanged"
             android:theme="@style/MaterialStatusBar"
             android:name=".ui.activities.home.HomeActivity"
             android:screenOrientation="portrait" />

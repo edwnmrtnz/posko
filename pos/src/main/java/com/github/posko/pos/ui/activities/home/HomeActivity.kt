@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.widget.AppCompatEditText
 import android.support.v7.widget.AppCompatTextView
 import android.support.v7.widget.Toolbar
+import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import com.github.posko.pos.R
+import com.github.posko.pos.tools.KeyboardTools
 import com.github.posko.pos.ui.activities.BaseActivity
 import javax.inject.Inject
 
@@ -20,6 +25,7 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var tvAppVersion : AppCompatTextView
+    lateinit var etSearchView : AppCompatEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,21 +33,31 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         setupToolbar()
 
-        bindView()
-
         initDrawer()
+
+        bindView()
 
         loadFragment()
     }
 
     private fun bindView() {
-        tvAppVersion = findViewById(R.id.tv_app_version)
+        etSearchView    = findViewById(R.id.et_search_view)
+
+        etSearchView.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                KeyboardTools.hideKeyboard(this, etSearchView)
+                etSearchView.clearFocus()
+            }
+            false
+        }
+
     }
 
     private fun setupToolbar() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.title = "Home"
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbar.requestFocus()
     }
 
     private fun loadFragment() {
@@ -60,9 +76,12 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawerLayout.setDrawerListener(drawerToggle)
         drawerToggle.syncState()
 
+        tvAppVersion = findViewById(R.id.tv_app_version)
+
         tvAppVersion.text = "v0.0.0.0"
 
         navigationView.setNavigationItemSelectedListener(this as NavigationView.OnNavigationItemSelectedListener)
+        drawerLayout.requestFocus()
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
