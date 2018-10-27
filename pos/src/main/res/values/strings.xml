@@ -24,4 +24,6 @@
     <string name="menu_favorites">Favorites</string>
     <string name="hint_search_item">Search Item</string>
     <string name="posko">posko</string>
+    <string name="menu_ticket">Ticket</string>
+    <string name="menu_filter">Filter</string>
 </resources>

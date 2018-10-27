@@ -8,6 +8,7 @@ import android.support.v7.widget.AppCompatEditText
 import android.support.v7.widget.AppCompatTextView
 import android.support.v7.widget.Toolbar
 import android.view.KeyEvent
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -86,5 +87,10 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         return false
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_home_toolbar, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
