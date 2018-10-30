@@ -1,5 +1,6 @@
 package com.github.posko.core
 
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 open class UnitTest {
@@ -12,5 +13,9 @@ open class UnitTest {
 
     protected fun readFile(fileNameWithExt: String) : String {
         return AssetReader.readJsonFile(fileNameWithExt)
+    }
+
+    protected fun gson () : Gson {
+        return gsonBuilder.create()
     }
 }

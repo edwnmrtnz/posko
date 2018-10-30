@@ -65,8 +65,8 @@ dependencies {
     // Test tools
     testImplementation 'junit:junit:4.12'
     testImplementation "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
-    testImplementation "org.mockito:mockito-core:$rootProject.mockito"
-    testImplementation "org.mockito:mockito-android:$rootProject.mockito"
+    testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
+    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
     // Required for instrumented tests
     testImplementation "com.android.support.test:runner:$rootProject.testRunner"
     testImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"

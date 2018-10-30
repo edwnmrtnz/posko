@@ -51,7 +51,6 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
             false
         }
-
     }
 
     private fun setupToolbar() {
