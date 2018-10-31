@@ -10,7 +10,6 @@ class LoginActivity : BaseActivity() {
     @Inject
     lateinit var loginFragment: LoginFragment
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -18,7 +17,6 @@ class LoginActivity : BaseActivity() {
         isDebug()
 
         loadFragment()
-
     }
 
     private fun loadFragment() {

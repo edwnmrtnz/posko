@@ -13,9 +13,10 @@ import android.view.ViewGroup
 
 import com.github.posko.pos.R
 import com.github.posko.pos.ui.activities.home.HomeActivity
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class LoginFragment @Inject constructor(): Fragment (), LoginContract.View {
+class LoginFragment @Inject constructor(): DaggerFragment (), LoginContract.View {
 
     private lateinit var btnLogin : AppCompatButton
     private lateinit var etAccountName : AppCompatEditText

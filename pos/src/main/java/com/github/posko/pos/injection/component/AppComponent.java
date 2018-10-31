@@ -3,6 +3,8 @@ package com.github.posko.pos.injection.component;
 import android.app.Application;
 
 import com.github.posko.pos.PoskoApplication;
+import com.github.posko.pos.RepositoryModuleProvider;
+import com.github.posko.pos.ServiceConfigurationModule;
 import com.github.posko.pos.injection.modules.ActivityBindings;
 import com.github.posko.pos.injection.modules.App;
 
@@ -17,7 +19,11 @@ import dagger.android.support.AndroidSupportInjectionModule;
 
         App.class,
 
-        ActivityBindings.class
+        ActivityBindings.class,
+
+        ServiceConfigurationModule.class,
+
+        RepositoryModuleProvider.class
 })
 public interface AppComponent extends AndroidInjector<PoskoApplication> {
 
