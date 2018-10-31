@@ -1,6 +1,7 @@
 package com.github.posko.cart.domain.model;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public class SelectedProduct {
 

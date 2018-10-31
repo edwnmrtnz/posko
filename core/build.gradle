@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -32,13 +32,13 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Support annotations
-    api "com.android.support:support-annotations:$rootProject.supportLibrary"
+    api 'androidx.annotation:annotation:1.0.0'
 
 
     //Room
-    implementation "android.arch.persistence.room:runtime:$rootProject.roomDatabase"
-    implementation "android.arch.persistence.room:rxjava2:$rootProject.roomDatabase"
-    kapt "android.arch.persistence.room:compiler:$rootProject.roomDatabase"
+    implementation 'androidx.room:room-runtime:2.1.0-alpha02'
+    implementation 'androidx.room:room-rxjava2:2.1.0-alpha02'
+    kapt 'androidx.room:room-compiler:2.1.0-alpha02'
 
     //RxJava
     api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
@@ -67,8 +67,8 @@ dependencies {
     testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
     // Required for instrumented tests
-    testImplementation "com.android.support.test:runner:$rootProject.testRunner"
-    testImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso"
+    testImplementation 'androidx.test:runner:1.1.0'
+    testImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
 }
 repositories {

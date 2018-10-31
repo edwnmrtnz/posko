@@ -1,9 +1,10 @@
 package com.github.posko.core.data.database.config
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
+
 import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.github.posko.core.data.database.dao.SessionDao
 import com.github.posko.core.data.database.dao.UserDao
 import com.github.posko.core.data.database.model.SessionData

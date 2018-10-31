@@ -2,8 +2,8 @@ package com.github.posko.pos.ui.activities
 
 
 import android.support.annotation.NonNull
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
+import androidx.core.app.Fragment
+import androidx.core.app.FragmentManager
 import android.util.Log
 import com.github.posko.pos.BuildConfig
 import dagger.android.support.DaggerAppCompatActivity
