@@ -8,6 +8,6 @@ import com.github.posko.core.data.database.model.UserData
 @Dao
 interface UserDao {
 
-    @Query("SELECT * FROM users WHERE email=:email")
-    fun getUser(email : String) : UserData
+    @Query("SELECT * FROM users WHERE id=:id")
+    fun getUser(id : Int) : UserData
 }

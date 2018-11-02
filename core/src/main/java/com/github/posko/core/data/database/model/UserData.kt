@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class UserData (
 
         @PrimaryKey
+        var id : Int,
+
         var email : String,
 
         @ColumnInfo(name = "first_name")

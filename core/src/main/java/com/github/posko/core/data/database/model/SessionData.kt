@@ -9,17 +9,16 @@ import androidx.room.PrimaryKey
 data class SessionData (
 
         @PrimaryKey
-        var id : String,
+        var id : Int,
 
         var domain : String,
 
-        @ColumnInfo(name = "session_for")
-        var sessionFor : String,
+        @ColumnInfo(name = "session_holder")
+        var sessionHolder : Int,
 
         @ColumnInfo(name = "auth_token")
         var authToken : String,
 
         @ColumnInfo(name = "token")
         var token : String
-
 )
