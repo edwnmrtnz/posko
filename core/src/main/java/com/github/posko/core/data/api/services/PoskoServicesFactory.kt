@@ -60,6 +60,20 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .getProductVariants(product_id)
     }
 
+    override fun getProductVariants(): Deferred<Response<List<ProductVariantRaw>>> {
+        val listType = object : TypeToken<MutableList<ProductVariantRaw>>() {}.type
+        val gson = gsonBuilder
+                .registerTypeAdapter(listType, ProductVariantsDeserializer())
+                .create()
+        return config
+                .getConfig()
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .setEnableLogging("get_product_variants")
+                .build()
+                .generateService(ProductVariantsServicesApi::class.java)
+                .getProductVariants()
+    }
+
     override fun getInvoices(): Deferred<Response<List<InvoiceRaw>>> {
         val listType = object : TypeToken<MutableList<InvoiceRaw>>() {}.type
         val gson = gsonBuilder

@@ -11,4 +11,7 @@ interface ProductVariantsServicesApi {
     @GET("/api/v1/products/{product_id}/variants")
     fun getProductVariants(@Path("product_id") product_id : Int) : Deferred<Response<List<ProductVariantRaw>>>
 
+    @GET("/api/v1/variants")
+    fun getProductVariants() : Deferred<Response<List<ProductVariantRaw>>>
+
 }

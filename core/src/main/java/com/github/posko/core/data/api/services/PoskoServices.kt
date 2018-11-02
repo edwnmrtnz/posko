@@ -14,6 +14,8 @@ interface PoskoServices {
 
     fun getProductVariants(product_id : Int) : Deferred<Response<List<ProductVariantRaw>>>
 
+    fun getProductVariants() : Deferred<Response<List<ProductVariantRaw>>>
+
     fun getInvoices() : Deferred<Response<List<InvoiceRaw>>>
 
     fun getInvoiceLines(invoice_id: Int) : Deferred<Response<List<InvoiceLineRaw>>>
