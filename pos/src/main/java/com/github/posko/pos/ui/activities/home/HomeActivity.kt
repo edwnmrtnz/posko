@@ -1,21 +1,19 @@
 package com.github.posko.pos.ui.activities.home
 
 import android.os.Bundle
-import android.support.design.widget.NavigationView
-import androidx.core.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.AppCompatEditText
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.Toolbar
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import com.github.posko.pos.R
 import com.github.posko.pos.tools.KeyboardTools
 import com.github.posko.pos.ui.activities.BaseActivity
+import com.google.android.material.navigation.NavigationView
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {

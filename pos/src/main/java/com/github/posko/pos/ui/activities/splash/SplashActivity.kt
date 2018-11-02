@@ -1,9 +1,9 @@
 package com.github.posko.pos.ui.activities.splash
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.github.posko.pos.ui.activities.login.LoginActivity
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import com.github.posko.pos.R
 
 

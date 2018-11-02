@@ -4,7 +4,9 @@ import com.github.posko.core.data.api.services.PoskoServices
 import com.github.posko.core.data.repository.user.UserLocalDataSource
 import com.github.posko.core.data.repository.user.UserRemoteDataSource
 import com.github.posko.core.data.repository.user.UserRepository
+import com.github.posko.core.domain.dispatcher.AppCoroutineDispatcher
 import com.github.posko.core.domain.gateways.UserGateway
+import com.github.posko.core.domain.interactor.user.LoginUserUseCase
 import com.github.posko.pos.injection.annotations.Local
 import com.github.posko.pos.injection.annotations.Remote
 import dagger.Module
@@ -31,4 +33,10 @@ class UserRepositoryModules {
     fun provideRepo(@Local local : UserGateway, @Remote remote : UserGateway) : UserGateway {
         return UserRepository(local, remote)
     }
+
+    @Provides
+    fun provideLoginUseCase(dispatcher : AppCoroutineDispatcher, gateway: UserGateway) : LoginUserUseCase {
+        return LoginUserUseCase(dispatcher, gateway)
+    }
+
 }
