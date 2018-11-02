@@ -35,9 +35,7 @@ class LoginFragment @Inject constructor(): DaggerFragment(), LoginContract.View 
         }
         clickHandler()
 
-        dialog = LoadingProgressDialog()
-                .setMessage("Hello world")
-
+        val dialog = LoadingProgressDialog().setMessage("Hello World")
         dialog.show(activity?.supportFragmentManager, "loading_progress_dialog")
 
         return view

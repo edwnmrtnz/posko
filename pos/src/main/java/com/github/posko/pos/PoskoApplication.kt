@@ -1,4 +1,5 @@
 package com.github.posko.pos
+import com.github.posko.pos.injection.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 

@@ -1,30 +1,35 @@
 package com.github.posko.pos.ui.dialog
 
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.annotation.NonNull
 import androidx.appcompat.widget.AppCompatTextView
 import com.github.posko.pos.R
-import dagger.android.support.DaggerDialogFragment
+import dagger.android.support.DaggerAppCompatDialogFragment
 
-import dagger.android.support.DaggerFragment
 
-class LoadingProgressDialog : DaggerDialogFragment() {
+class LoadingProgressDialog : DaggerAppCompatDialogFragment() {
 
     private lateinit var tvProgressMessage : AppCompatTextView
 
     private var progressMessage = "Please wait..."
 
-
-    public fun setMessage(message : String) : LoadingProgressDialog {
+    fun setMessage(message : String) : LoadingProgressDialog {
         this.progressMessage = message
         return this
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.dialog_loading_progress, container, false)
+    @SuppressLint("InflateParams")
+    @NonNull
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val inflater = activity!!.layoutInflater
+        val view = inflater.inflate(R.layout.dialog_loading_progress, null)
+
+        val dialog = AlertDialog.Builder(activity)
+        dialog.setView(view)
+        dialog.setCancelable(false)
 
         with(view) {
             tvProgressMessage = findViewById(R.id.tv_progress_message)
@@ -32,6 +37,7 @@ class LoadingProgressDialog : DaggerDialogFragment() {
 
         tvProgressMessage.text = progressMessage
 
-        return view
+        return dialog.create()
     }
+
 }

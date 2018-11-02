@@ -1,6 +1,9 @@
 package com.github.posko.pos.ui.activities.login
 
-class LoginPresenter : LoginContract.Presenter {
+import com.github.posko.core.domain.interactor.user.LoginUserUseCase
+import javax.inject.Inject
+
+class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUserUseCase): LoginContract.Presenter {
 
     override fun checkSession() {
 

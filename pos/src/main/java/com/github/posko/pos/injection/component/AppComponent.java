@@ -5,14 +5,18 @@ import android.app.Application;
 import com.github.posko.pos.PoskoApplication;
 import com.github.posko.pos.RepositoryModuleProvider;
 import com.github.posko.pos.ServiceConfigurationModule;
+import com.github.posko.pos.gateways.UserRepositoryModules;
 import com.github.posko.pos.injection.modules.ActivityBindings;
 import com.github.posko.pos.injection.modules.App;
+
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+@Singleton
 @Component(modules = {
 
         AndroidSupportInjectionModule.class,
