@@ -15,4 +15,6 @@ data class ProductVariantRaw(var id : Int,
                              var created_at : String,
                              var updated_at : String,
                              var selling_policy : String,
-                             var cost: Double?)
+                             var cost: Double?,
+                             var open_price: Boolean?,
+                             var default : Boolean?)
