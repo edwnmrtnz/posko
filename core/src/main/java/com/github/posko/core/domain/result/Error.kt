@@ -1,6 +1,6 @@
 package com.github.posko.core.domain.result
 
-sealed class Error {
-    class HttpError(val code : Int, val message : String) : Error()
-    class TransactionError(val message : String) : Error()
+sealed class Error(open var message : String) {
+    class HttpError(val code : Int, override var message : String) : Error(message)
+    class TransactionError(override var message : String) : Error(message)
 }

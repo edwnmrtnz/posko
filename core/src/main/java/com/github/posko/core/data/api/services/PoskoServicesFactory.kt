@@ -18,7 +18,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
 
     private var gsonBuilder = GsonBuilder().setPrettyPrinting()
 
-    override fun login(account_name: String, email: String, password: String): Deferred<Response<UserRaw>> {
+    override fun login(account_name: String, email: String, password: String): Deferred<UserRaw> {
         val gson = gsonBuilder
                 .registerTypeAdapter(UserRaw::class.java, UserDeserializer())
                 .create()
@@ -29,10 +29,9 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .build()
                 .generateService(UserServicesApi::class.java)
                 .login(account_name, email, password)
-
     }
 
-    override fun getProducts(): Deferred<Response<List<ProductRaw>>> {
+    override fun getProducts(): Deferred<List<ProductRaw>> {
         val listType = object : TypeToken<MutableList<ProductRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listType, ProductsDeserializer())
@@ -46,7 +45,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .getProducts()
     }
 
-    override fun getProductVariants(product_id: Int): Deferred<Response<List<ProductVariantRaw>>> {
+    override fun getProductVariants(product_id: Int): Deferred<List<ProductVariantRaw>> {
         val listType = object : TypeToken<MutableList<ProductVariantRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listType, ProductVariantsDeserializer())
@@ -60,7 +59,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .getProductVariants(product_id)
     }
 
-    override fun getProductVariants(): Deferred<Response<List<ProductVariantRaw>>> {
+    override fun getProductVariants(): Deferred<List<ProductVariantRaw>> {
         val listType = object : TypeToken<MutableList<ProductVariantRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listType, ProductVariantsDeserializer())
@@ -74,7 +73,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .getProductVariants()
     }
 
-    override fun getInvoices(): Deferred<Response<List<InvoiceRaw>>> {
+    override fun getInvoices(): Deferred<List<InvoiceRaw>> {
         val listType = object : TypeToken<MutableList<InvoiceRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listType, InvoiceDeserializer())
@@ -88,7 +87,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .getInvoices()
     }
 
-    override fun getInvoiceLines(invoice_id: Int): Deferred<Response<List<InvoiceLineRaw>>> {
+    override fun getInvoiceLines(invoice_id: Int): Deferred<List<InvoiceLineRaw>> {
         val listype = object : TypeToken<MutableList<InvoiceLineRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listype, InvoiceLineDeserializer())

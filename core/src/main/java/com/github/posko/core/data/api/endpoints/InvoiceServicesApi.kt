@@ -8,6 +8,6 @@ import retrofit2.http.GET
 interface InvoiceServicesApi {
 
     @GET("/api/v1/invoices")
-    fun getInvoices() : Deferred<Response<List<InvoiceRaw>>>
+    fun getInvoices() : Deferred<List<InvoiceRaw>>
 
 }

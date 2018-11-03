@@ -9,6 +9,6 @@ import retrofit2.http.GET
 interface ProductsServicesApi {
 
     @GET("/api/v1/products")
-    fun getProducts() : Deferred<Response<List<ProductRaw>>>
+    fun getProducts() : Deferred<List<ProductRaw>>
 
 }

@@ -9,5 +9,5 @@ import retrofit2.http.Path
 interface InvoiceLinesServicesApi {
 
     @GET("api/v1/invoices/{invoice_id}/invoice_lines")
-    fun getInvoiceLines(@Path("invoice_id") invoice_id: Int) : Deferred<Response<List<InvoiceLineRaw>>>
+    fun getInvoiceLines(@Path("invoice_id") invoice_id: Int) : Deferred<List<InvoiceLineRaw>>
 }

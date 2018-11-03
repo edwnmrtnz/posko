@@ -20,7 +20,7 @@ class ServiceGenerator private constructor(private var baseUrl: String,
     fun <S> generateService(serviceClass : Class<S> ) : S {
         val httpClient = OkHttpClient.Builder()
 
-        if(basicAuth.isEmpty()) httpClient.addInterceptor(BasicAuthInterceptor(basicAuth))
+        if(!basicAuth.isEmpty()) httpClient.addInterceptor(BasicAuthInterceptor(basicAuth))
 
         if(enableLogging) {
             val httpLoggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {

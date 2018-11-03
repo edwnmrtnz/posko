@@ -8,15 +8,15 @@ import retrofit2.http.Path
 
 interface PoskoServices {
 
-    fun login(account_name : String, email : String, password : String) : Deferred<Response<UserRaw>>
+    fun login(account_name : String, email : String, password : String) : Deferred<UserRaw>
 
-    fun getProducts() : Deferred<Response<List<ProductRaw>>>
+    fun getProducts() : Deferred<List<ProductRaw>>
 
-    fun getProductVariants(product_id : Int) : Deferred<Response<List<ProductVariantRaw>>>
+    fun getProductVariants(product_id : Int) : Deferred<List<ProductVariantRaw>>
 
-    fun getProductVariants() : Deferred<Response<List<ProductVariantRaw>>>
+    fun getProductVariants() : Deferred<List<ProductVariantRaw>>
 
-    fun getInvoices() : Deferred<Response<List<InvoiceRaw>>>
+    fun getInvoices() : Deferred<List<InvoiceRaw>>
 
-    fun getInvoiceLines(invoice_id: Int) : Deferred<Response<List<InvoiceLineRaw>>>
+    fun getInvoiceLines(invoice_id: Int) : Deferred<List<InvoiceLineRaw>>
 }

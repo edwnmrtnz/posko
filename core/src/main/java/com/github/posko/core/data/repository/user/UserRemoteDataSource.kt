@@ -12,11 +12,12 @@ class UserRemoteDataSource(private val services : PoskoServices) : UserGateway{
     override suspend fun login(account_name: String, email: String, password: String): Either<Error, User> {
         return try {
             val result = services.login(account_name, email, password).await()
-            Either.Right(result.body()!!.toUser())
+            Either.Right(result.toUser())
+
         } catch (e : HttpException) {
             Either.Left(Error.HttpError(e.code(), e.message()))
         } catch (e : Throwable) {
-            Either.Left(Error.TransactionError(if(e.message != null) e.message!! else "Something went wrong!"))
+            Either.Left(Error.TransactionError(if(e.localizedMessage != null) e.localizedMessage!! else "Something went wrong!"))
         }
     }
 }

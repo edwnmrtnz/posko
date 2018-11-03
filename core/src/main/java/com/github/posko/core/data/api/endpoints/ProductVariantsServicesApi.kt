@@ -9,9 +9,9 @@ import retrofit2.http.Path
 interface ProductVariantsServicesApi {
 
     @GET("/api/v1/products/{product_id}/variants")
-    fun getProductVariants(@Path("product_id") product_id : Int) : Deferred<Response<List<ProductVariantRaw>>>
+    fun getProductVariants(@Path("product_id") product_id : Int) : Deferred<List<ProductVariantRaw>>
 
     @GET("/api/v1/variants")
-    fun getProductVariants() : Deferred<Response<List<ProductVariantRaw>>>
+    fun getProductVariants() : Deferred<List<ProductVariantRaw>>
 
 }
