@@ -29,7 +29,7 @@ android {
             applicationIdSuffix = ".mock"
             versionNameSuffix = "-mock"
             resValue "string", "flavored_app_name", "Mock POSko"
-            buildConfigField("String", "SERVER", "\"http://192.168.10.100:3000\"")
+            buildConfigField("String", "SERVER", "\"http://192.168.8.101:3000\"")
         }
 
         prod {
@@ -81,4 +81,10 @@ dependencies {
     testImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     implementation project(':core')
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }

@@ -1,13 +1,17 @@
 package com.github.posko.pos.ui.activities.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import com.github.posko.pos.BuildConfig
 
 import com.github.posko.pos.R
+import com.github.posko.pos.ui.activities.home.HomeActivity
 import com.github.posko.pos.ui.dialog.LoadingProgressDialog
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -21,7 +25,7 @@ class LoginFragment @Inject constructor(): DaggerFragment(), LoginContract.View 
 
     @Inject lateinit var presenter : LoginPresenter
 
-    private lateinit var dialog : LoadingProgressDialog
+    private var dialog : LoadingProgressDialog = LoadingProgressDialog()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,10 +37,16 @@ class LoginFragment @Inject constructor(): DaggerFragment(), LoginContract.View 
             etEmailAddress  = findViewById(R.id.et_email_address)
             etPassword      = findViewById(R.id.et_password)
         }
+
         clickHandler()
 
-        val dialog = LoadingProgressDialog().setMessage("Hello World")
-        dialog.show(activity?.supportFragmentManager, "loading_progress_dialog")
+        if(BuildConfig.DEBUG) {
+            etAccountName.setText(getString(R.string.login_sample_account_name))
+            etEmailAddress.setText(getString(R.string.sample_login_email))
+            etPassword.setText(getString(R.string.sample_login_pass))
+        }
+
+        presenter.takeView(this)
 
         return view
     }
@@ -48,35 +58,35 @@ class LoginFragment @Inject constructor(): DaggerFragment(), LoginContract.View 
     }
 
     override fun showHomeActivity() {
-
+        val intent = Intent(context,HomeActivity::class.java)
+        startActivity(intent)
+        activity!!.finish()
     }
 
     override fun showProgress(message: String) {
-
+        dialog.setMessage(message)
+        dialog.isCancelable = false
+        dialog.show(activity!!.supportFragmentManager, "loading_progress_dialog")
     }
 
-    override fun hideProgress(message: String) {
-
+    override fun hideProgress() {
+        dialog.dismiss()
     }
 
     override fun showDialog(message: String) {
-
-    }
-
-    override fun hideDialog(message: String) {
-
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun showAccountNameError(message: String) {
-
+        etAccountName.error = message
     }
 
     override fun showEmailError(message: String) {
-
+        etEmailAddress.error = message
     }
 
     override fun showPasswordError(message: String) {
-
+        etPassword.error = message
     }
 
 }

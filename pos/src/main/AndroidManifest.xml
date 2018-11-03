@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.github.posko.pos">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".PoskoApplication"
         android:allowBackup="false"
@@ -24,7 +26,7 @@
         </activity>
 
         <activity
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"
             android:theme="@style/LightTheme"
             android:screenOrientation="portrait"
             android:name=".ui.activities.login.LoginActivity"/>

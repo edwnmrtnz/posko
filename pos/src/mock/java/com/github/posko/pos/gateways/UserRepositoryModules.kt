@@ -25,7 +25,7 @@ class UserRepositoryModules {
     @Provides
     @Remote
     fun provideRemote(services : PoskoServices) : UserGateway {
-        return UserRemoteDataSource(services)
+        return FakeUserRemoteDataSource()
     }
     @Provides
     @Singleton

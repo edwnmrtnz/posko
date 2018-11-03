@@ -59,7 +59,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:theme="@style/EditTextTheme">
 
             <androidx.appcompat.widget.AppCompatEditText
@@ -76,7 +76,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:theme="@style/EditTextTheme"
             app:passwordToggleEnabled="true">
 
@@ -92,6 +92,7 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="20dp"
             android:id="@+id/btn_login"
             android:text="@string/action_login"
             style="@style/AppCommonButton" />

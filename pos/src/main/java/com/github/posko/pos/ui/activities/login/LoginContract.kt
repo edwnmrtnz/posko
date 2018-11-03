@@ -4,6 +4,8 @@ interface LoginContract {
 
     interface Presenter {
 
+        fun takeView(view : View)
+
         fun checkSession()
 
         fun onLoginClicked(account_name : String, email : String, password: String)
@@ -16,11 +18,9 @@ interface LoginContract {
 
         fun showProgress(message : String)
 
-        fun hideProgress(message : String)
+        fun hideProgress()
 
         fun showDialog(message : String)
-
-        fun hideDialog(message : String)
 
         fun showAccountNameError(message : String)
 

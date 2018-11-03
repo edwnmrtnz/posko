@@ -26,4 +26,7 @@
     <string name="posko">posko</string>
     <string name="menu_ticket">Ticket</string>
     <string name="menu_filter">Filter</string>
+    <string name="login_sample_account_name">first_company</string>
+    <string name="sample_login_email">admin@first_company.com</string>
+    <string name="sample_login_pass">pass</string>
 </resources>

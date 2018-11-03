@@ -4,7 +4,7 @@
     android:layout_height="240dp"
     android:background="@color/colorPrimary">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:padding="16dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp"
@@ -14,14 +14,14 @@
         android:paddingBottom="15dp">
 
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_profile_image"
             android:layout_marginBottom="10dp"
             android:src="@drawable/ic_android_white_24dp"
             android:layout_width="70dp"
             android:layout_height="70dp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_user_name"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_user_email"
             android:textColor="@color/white"
             android:textSize="14sp"
@@ -37,6 +37,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>
