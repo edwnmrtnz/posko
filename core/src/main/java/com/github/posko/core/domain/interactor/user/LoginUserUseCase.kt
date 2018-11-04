@@ -5,12 +5,12 @@ import com.github.posko.core.domain.gateways.UserGateway
 import com.github.posko.core.domain.interactor.Interactor
 import com.github.posko.core.domain.model.User
 import com.github.posko.core.domain.result.Either
-import com.github.posko.core.domain.result.Error
+import com.github.posko.core.domain.result.Failure
 
 class LoginUserUseCase (dispatcher: AppCoroutineDispatcher,
                         private var gateway: UserGateway) : Interactor<User, LoginUserUseCase.Param>(dispatcher) {
 
-    override suspend fun run(params: Param): Either<Error, User> {
+    override suspend fun run(params: Param): Either<Failure, User> {
         return gateway.login(params.accountName, params.email, params.password)
     }
 
