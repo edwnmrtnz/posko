@@ -8,6 +8,10 @@ fun UserRaw.toUserData() : UserData {
     return UserData(id, email, first_name, last_name, token, auth_token, created_at)
 }
 
+fun User.toUserData() : UserData {
+    return UserData(id, email, firstName, lastName, token, authToken, createdAt)
+}
+
 fun UserRaw.toUser() : User {
     return User(id, email, first_name, last_name, token, auth_token, created_at)
 }
