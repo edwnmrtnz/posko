@@ -9,11 +9,11 @@
 
         <item
             android:icon="@drawable/ic_confirmation_number_black_24dp"
-            android:title="@string/menu_tickets"/>
+            android:title="@string/menu_history"/>
 
         <item
             android:icon="@drawable/ic_local_offer_black_24dp"
-            android:title="Products"/>
+            android:title="@string/menu_products"/>
 
         <item
             android:icon="@drawable/ic_favorite_black_24dp"

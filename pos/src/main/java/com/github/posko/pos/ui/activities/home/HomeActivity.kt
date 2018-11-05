@@ -10,6 +10,8 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import com.github.posko.core.domain.interactor.variant.FetchVariantsUseCase
+import com.github.posko.core.domain.model.EmptyParam
 import com.github.posko.pos.R
 import com.github.posko.pos.tools.KeyboardTools
 import com.github.posko.pos.ui.activities.BaseActivity
@@ -26,6 +28,9 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     lateinit var tvAppVersion : AppCompatTextView
     lateinit var etSearchView : AppCompatEditText
 
+
+    @Inject lateinit var fetchVariantsUseCase: FetchVariantsUseCase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -37,6 +42,10 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         bindView()
 
         loadFragment()
+
+        fetchVariantsUseCase.execute(EmptyParam()) {
+
+        }
     }
 
     private fun bindView() {

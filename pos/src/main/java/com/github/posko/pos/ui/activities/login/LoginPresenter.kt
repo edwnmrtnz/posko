@@ -2,7 +2,7 @@ package com.github.posko.pos.ui.activities.login
 
 import com.github.posko.core.domain.interactor.user.LoginUserUseCase
 import com.github.posko.core.domain.result.Either
-import com.github.posko.core.domain.result.Error
+import com.github.posko.core.domain.result.Failure
 import javax.inject.Inject
 
 class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUserUseCase): LoginContract.Presenter {
@@ -41,7 +41,7 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
             if(it.isRight) {
                 view.showHomeActivity()
             } else {
-                val error = it as Either.Left<Error>
+                val error = it as Either.Left<Failure>
                 val message = error.error.message
                 view.showDialog(message)
             }

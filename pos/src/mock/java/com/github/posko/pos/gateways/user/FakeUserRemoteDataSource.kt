@@ -1,4 +1,4 @@
-package com.github.posko.pos.gateways
+package com.github.posko.pos.gateways.user
 
 import com.github.posko.core.data.api.deserializer.UserDeserializer
 import com.github.posko.core.data.api.model.UserRaw
@@ -6,13 +6,10 @@ import com.github.posko.core.data.extension.toUser
 import com.github.posko.core.domain.gateways.UserGateway
 import com.github.posko.core.domain.model.User
 import com.github.posko.core.domain.result.Either
-import com.github.posko.core.domain.result.Error
-import com.google.gson.Gson
+import com.github.posko.core.domain.result.Failure
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
-import java.util.*
-import kotlin.concurrent.schedule
 
 class FakeUserRemoteDataSource : UserGateway {
 
@@ -28,7 +25,7 @@ class FakeUserRemoteDataSource : UserGateway {
             "    }\n" +
             "}";
 
-    override suspend fun login(account_name: String, email: String, password: String): Either<Error, User> {
+    override suspend fun login(account_name: String, email: String, password: String): Either<Failure, User> {
         launch {
             delay(5000)
         }

@@ -1,8 +1,7 @@
-package com.github.posko.pos.gateways
+package com.github.posko.pos.gateways.user
 
 import com.github.posko.core.data.api.services.PoskoServices
 import com.github.posko.core.data.repository.user.UserLocalDataSource
-import com.github.posko.core.data.repository.user.UserRemoteDataSource
 import com.github.posko.core.data.repository.user.UserRepository
 import com.github.posko.core.domain.dispatcher.AppCoroutineDispatcher
 import com.github.posko.core.domain.gateways.UserGateway
