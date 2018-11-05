@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/Users/edwinmartinez/AndroidStudioProjects/personal/posko-android
+    working_directory: ~/posko-android
     docker:
       - image: circleci/android:api-25-alpha
     environment:

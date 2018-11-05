@@ -68,9 +68,9 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(userRaw))
 
-        val result = services.login("hello", "hello", "hello").await().body()
+        val result = services.login("hello", "hello", "hello").await()
 
-        doPrint(result!!)
+        doPrint(result)
     }
 
     @Test
@@ -84,9 +84,9 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(productsRaw))
 
-        val result = services.getProducts().await().body()
+        val result = services.getProducts().await()
 
-        doPrint(result!!)
+        doPrint(result)
     }
 
     @Test
@@ -99,9 +99,9 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(productsVariantsRaw))
 
-        val result = services.getProductVariants(1).await().body()
+        val result = services.getProductVariants(1).await()
 
-        doPrint(result!!)
+        doPrint(result)
     }
 
     @Test
@@ -114,7 +114,7 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(invoicesRaw))
 
-        val result = services.getInvoices().await().body()
+        val result = services.getInvoices().await()
 
         assertNotNull(result)
         assertEquals(3, result!!.size)
@@ -132,7 +132,7 @@ class PoskoServicesFactoryTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(invoiceLinesRaw))
 
-        val result = services.getInvoiceLines(1).await().body()
+        val result = services.getInvoiceLines(1).await()
 
         assertNotNull(result)
 
