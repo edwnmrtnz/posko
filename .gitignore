@@ -12,3 +12,14 @@
 .externalNativeBuild
 /.idea
 .idea/misc.xml
+.project
+.settings/
+cart/.project
+cart/.settings/
+cart/.classpath
+core/.classpath
+core/.project
+core/.settings/
+pos/.classpath
+pos/.project
+pos/.settings/

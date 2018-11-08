@@ -29,7 +29,7 @@ android {
             applicationIdSuffix = ".mock"
             versionNameSuffix = "-mock"
             resValue "string", "flavored_app_name", "Mock POSko"
-            buildConfigField("String", "SERVER", "\"http://192.168.8.108:3000\"")
+            buildConfigField("String", "SERVER", "\"http://192.168.8.105:3000\"")
         }
 
         prod {

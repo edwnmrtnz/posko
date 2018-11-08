@@ -36,12 +36,11 @@ dependencies {
 
 
     //Room
-    implementation 'androidx.room:room-runtime:2.1.0-alpha02'
-    implementation 'androidx.room:room-rxjava2:2.1.0-alpha02'
+    api 'androidx.room:room-runtime:2.1.0-alpha02'
+    api 'androidx.room:room-rxjava2:2.1.0-alpha02'
     kapt 'androidx.room:room-compiler:2.1.0-alpha02'
 
-
-
+    
     //RxJava
     api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
     api "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
@@ -68,6 +67,7 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
     testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
+
     // Required for instrumented tests
     testImplementation 'androidx.test:runner:1.1.0'
     testImplementation 'androidx.test.espresso:espresso-core:3.1.0'
