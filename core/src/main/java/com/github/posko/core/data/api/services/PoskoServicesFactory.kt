@@ -1,6 +1,7 @@
 package com.github.posko.core.data.api.services
 
 import android.util.Log
+import com.github.posko.core.data.api.RequestAuthorization
 import com.github.posko.core.data.api.config.ServiceConfiguration
 import com.github.posko.core.data.api.deserializer.*
 import com.github.posko.core.data.api.endpoints.*
@@ -14,7 +15,8 @@ import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Type
 
-class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServices {
+class PoskoServicesFactory(private val config: ServiceConfiguration,
+                           private val authorization: RequestAuthorization) : PoskoServices {
 
     private var gsonBuilder = GsonBuilder().setPrettyPrinting()
 
@@ -39,6 +41,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
         return config
                 .getConfig()
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_products")
                 .build()
                 .generateService(ProductsServicesApi::class.java)
@@ -53,6 +56,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
         return config
                 .getConfig()
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_product_variants_for $product_id")
                 .build()
                 .generateService(ProductVariantsServicesApi::class.java)
@@ -66,6 +70,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
                 .create()
         return config
                 .getConfig()
+                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setEnableLogging("get_product_variants")
                 .build()
@@ -81,6 +86,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
         return config
                 .getConfig()
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoices")
                 .build()
                 .generateService(InvoiceServicesApi::class.java)
@@ -95,6 +101,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration) : PoskoServ
         return config
                 .getConfig()
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoice_lines")
                 .build()
                 .generateService(InvoiceLinesServicesApi::class.java)

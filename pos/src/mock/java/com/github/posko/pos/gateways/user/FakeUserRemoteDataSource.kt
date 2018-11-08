@@ -12,6 +12,9 @@ import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 
 class FakeUserRemoteDataSource : UserGateway {
+    override suspend fun saveUser(user: User) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private val userRaw = "{\n" +
             "    \"user\": {\n" +

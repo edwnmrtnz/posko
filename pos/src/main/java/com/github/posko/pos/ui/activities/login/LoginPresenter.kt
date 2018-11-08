@@ -3,6 +3,7 @@ package com.github.posko.pos.ui.activities.login
 import com.github.posko.core.domain.interactor.user.LoginUserUseCase
 import com.github.posko.core.domain.result.Either
 import com.github.posko.core.domain.result.Failure
+import com.github.posko.pos.BuildConfig
 import javax.inject.Inject
 
 class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUserUseCase): LoginContract.Presenter {
@@ -13,10 +14,6 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
         this.view = view
     }
 
-
-    override fun checkSession() {
-
-    }
 
     override fun onLoginClicked(account_name: String, email: String, password: String) {
 
@@ -35,15 +32,15 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
             return
         }
 
-        view.showProgress("Authenticating...")
-        loginUserUseCase.execute(LoginUserUseCase.Param(account_name, email, password)) {
-            view.hideProgress()
+        view.showLoading("Authenticating...")
+        loginUserUseCase.execute(LoginUserUseCase.Param(BuildConfig.SERVER, account_name, email, password)) {
+            view.hideLoading()
             if(it.isRight) {
                 view.showHomeActivity()
             } else {
                 val error = it as Either.Left<Failure>
                 val message = error.error.message
-                view.showDialog(message)
+                view.showPopup(message)
             }
         }
     }

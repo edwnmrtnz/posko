@@ -27,11 +27,11 @@ class SessionHelper(val dao : SessionDao) : SessionGateway, RequestAuthorization
         dao.insert(session.toSessionData())
     }
 
-    override fun getUsername() {
-        dao.getSession()!!.token
+    override fun getUsername(): String {
+       return dao.getSession()!!.token
     }
 
-    override fun getPassword() {
-        dao.getSession()!!.authToken
+    override fun getPassword(): String {
+       return dao.getSession()!!.authToken
     }
 }

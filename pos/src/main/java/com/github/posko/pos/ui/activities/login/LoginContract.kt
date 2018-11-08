@@ -1,26 +1,19 @@
 package com.github.posko.pos.ui.activities.login
 
+import com.github.posko.pos.ui.BasePresenter
+import com.github.posko.pos.ui.BaseView
+
 interface LoginContract {
 
-    interface Presenter {
-
-        fun takeView(view : View)
-
-        fun checkSession()
+    interface Presenter : BasePresenter<View>  {
 
         fun onLoginClicked(account_name : String, email : String, password: String)
 
     }
 
-    interface View {
+    interface View : BaseView {
 
         fun showHomeActivity()
-
-        fun showProgress(message : String)
-
-        fun hideProgress()
-
-        fun showDialog(message : String)
 
         fun showAccountNameError(message : String)
 
