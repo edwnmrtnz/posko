@@ -20,12 +20,13 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
 
     private var gsonBuilder = GsonBuilder().setPrettyPrinting()
 
-    override fun login(account_name: String, email: String, password: String): Deferred<UserRaw> {
+    override fun login(domain :String,account_name: String, email: String, password: String): Deferred<UserRaw> {
         val gson = gsonBuilder
                 .registerTypeAdapter(UserRaw::class.java, UserDeserializer())
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(domain)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setEnableLogging("login")
                 .build()
@@ -40,6 +41,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(authorization.getDomain())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_products")
@@ -55,6 +57,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(authorization.getDomain())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_product_variants_for $product_id")
@@ -70,6 +73,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(authorization.getDomain())
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setEnableLogging("get_product_variants")
@@ -85,6 +89,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(authorization.getDomain())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoices")
@@ -100,6 +105,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .create()
         return config
                 .getConfig()
+                .setBaseUrl(authorization.getDomain())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoice_lines")

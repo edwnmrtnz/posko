@@ -15,7 +15,12 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
     }
 
 
-    override fun onLoginClicked(account_name: String, email: String, password: String) {
+    override fun onLoginClicked(server: String, account_name: String, email: String, password: String) {
+
+        if(server.isEmpty()) {
+            view.showDomainError("Cannot be empty")
+            return
+        }
 
         if(account_name.isEmpty()) {
             view.showAccountNameError("Cannot be empty")
@@ -33,7 +38,7 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
         }
 
         view.showLoading("Authenticating...")
-        loginUserUseCase.execute(LoginUserUseCase.Param(BuildConfig.SERVER, account_name, email, password)) {
+        loginUserUseCase.execute(LoginUserUseCase.Param(server, account_name, email, password)) {
             view.hideLoading()
             if(it.isRight) {
                 view.showHomeActivity()

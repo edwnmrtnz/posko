@@ -14,9 +14,9 @@ class UserRemoteDataSource(private val services : PoskoServices) : UserGateway{
         throw IllegalStateException ("Should never be called")
     }
 
-    override suspend fun login(account_name: String, email: String, password: String): Either<Failure, User> {
+    override suspend fun login(domain : String, account_name: String, email: String, password: String): Either<Failure, User> {
         return try {
-            val result = services.login(account_name, email, password).await()
+            val result = services.login(domain, account_name, email, password).await()
             Either.Right(result.toUser())
         } catch (e : HttpException) {
             Either.Left(Failure.HttpFailure(e.code(), e.message()))

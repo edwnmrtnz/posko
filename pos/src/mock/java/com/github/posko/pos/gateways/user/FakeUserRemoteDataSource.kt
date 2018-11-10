@@ -28,7 +28,7 @@ class FakeUserRemoteDataSource : UserGateway {
             "    }\n" +
             "}";
 
-    override suspend fun login(account_name: String, email: String, password: String): Either<Failure, User> {
+    override suspend fun login(domain: String, account_name: String, email: String, password: String): Either<Failure, User> {
         launch {
             delay(5000)
         }

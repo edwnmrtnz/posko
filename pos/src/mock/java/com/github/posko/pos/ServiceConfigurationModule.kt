@@ -10,7 +10,7 @@ class ServiceConfigurationModule {
 
     @Provides
     fun provideWebServiceConfiguration() : ServiceConfiguration {
-        return ServiceConfigProvider(BuildConfig.SERVER,
+        return ServiceConfigProvider(
                 ServiceConfigProvider.EncryptorImpl(),
                 ServiceConfigProvider.ServiceLoggerImpl()
         )

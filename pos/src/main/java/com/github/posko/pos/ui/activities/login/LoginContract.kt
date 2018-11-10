@@ -7,7 +7,7 @@ interface LoginContract {
 
     interface Presenter : BasePresenter<View>  {
 
-        fun onLoginClicked(account_name : String, email : String, password: String)
+        fun onLoginClicked(server : String, account_name : String, email : String, password: String)
 
     }
 
@@ -20,5 +20,7 @@ interface LoginContract {
         fun showEmailError(message: String)
 
         fun showPasswordError(message : String)
+
+        fun showDomainError(message : String)
     }
 }

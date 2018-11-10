@@ -30,4 +30,6 @@
     <string name="sample_login_email">admin@first_company.com</string>
     <string name="sample_login_pass">pass</string>
     <string name="menu_products">Products</string>
+    <string name="menu_search">Search</string>
+    <string name="login_server">Domain</string>
 </resources>

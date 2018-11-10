@@ -13,7 +13,7 @@ class LoginUserUseCase (dispatcher: AppCoroutineDispatcher,
                         private var createSessionUseCase: CreateSessionUseCase) : Interactor<User, LoginUserUseCase.Param>(dispatcher) {
 
     override suspend fun run(params: Param): Either<Failure, User> {
-        val loginResult = userGateway.login(params.accountName, params.email, params.password)
+        val loginResult = userGateway.login(params.domain, params.accountName, params.email, params.password)
         return if(loginResult.isLeft) {
             loginResult
         } else {

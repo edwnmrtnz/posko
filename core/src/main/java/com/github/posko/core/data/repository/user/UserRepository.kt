@@ -10,8 +10,8 @@ class UserRepository(private val local: UserGateway, private val remote : UserGa
         local.saveUser(user)
     }
 
-    override suspend fun login(account_name: String, email: String, password: String): Either<Failure, User> {
-        val result =  remote.login(account_name, email, password)
+    override suspend fun login(domain : String, account_name: String, email: String, password: String): Either<Failure, User> {
+        val result =  remote.login(domain, account_name, email, password)
         return if(result is Either.Left) {
             result
         } else {

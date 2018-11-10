@@ -8,7 +8,7 @@ import retrofit2.http.Path
 
 interface PoskoServices {
 
-    fun login(account_name : String, email : String, password : String) : Deferred<UserRaw>
+    fun login(domain : String, account_name : String, email : String, password : String) : Deferred<UserRaw>
 
     fun getProducts() : Deferred<List<ProductRaw>>
 

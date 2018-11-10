@@ -8,6 +8,9 @@ import com.github.posko.core.domain.gateways.SessionGateway
 import com.github.posko.core.domain.model.Session
 
 class SessionHelper(val dao : SessionDao) : SessionGateway, RequestAuthorization {
+    override fun getDomain(): String {
+        return dao.getSession()!!.domain
+    }
 
     override fun checkSession(callback: SessionGateway.CheckSessionCallback) {
         val session = dao.getSession()

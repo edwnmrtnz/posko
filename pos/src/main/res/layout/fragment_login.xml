@@ -1,105 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:padding="20dp"
+    android:fillViewport="true"
     tools:context=".ui.activities.login.LoginFragment">
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:text="@string/login_sign_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_marginTop="8dp"
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="2dp"
-            android:layout_height="5dp"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/EditTextTheme">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_account_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_account_name"
-                android:inputType="textNoSuggestions|text"
-                android:textSize="20sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:theme="@style/EditTextTheme">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_email_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_email_address"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:theme="@style/EditTextTheme"
-            app:passwordToggleEnabled="true">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/login_password"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_marginTop="20dp"
-            android:id="@+id/btn_login"
-            android:text="@string/action_login"
-            style="@style/AppCommonButton" />
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/login_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="2dp"
+                android:layout_height="5dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/EditTextTheme">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_server"
+                    android:hint="@string/login_server"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textNoSuggestions|text"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/EditTextTheme">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_account_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_account_name"
+                    android:inputType="textNoSuggestions|text"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:theme="@style/EditTextTheme">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_email_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_email_address"
+                    android:inputType="textEmailAddress"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:theme="@style/EditTextTheme"
+                app:passwordToggleEnabled="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_password"
+                    android:inputType="textPassword"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btn_login"
+                android:text="@string/action_login"
+                style="@style/AppCommonButton" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>
