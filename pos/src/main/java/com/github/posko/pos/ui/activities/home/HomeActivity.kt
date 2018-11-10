@@ -1,5 +1,6 @@
 package com.github.posko.pos.ui.activities.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -15,6 +16,7 @@ import com.github.posko.pos.R
 import com.github.posko.pos.tools.KeyboardTools
 import com.github.posko.pos.ui.activities.BaseActivity
 import com.google.android.material.navigation.NavigationView
+import com.miguelcatalan.materialsearchview.MaterialSearchView
 import javax.inject.Inject
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +29,8 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     lateinit var tvAppVersion : AppCompatTextView
     lateinit var etSearchView : AppCompatEditText
 
+    lateinit var searchView: MaterialSearchView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -35,11 +39,39 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         initDrawer()
 
+        initSearchView()
+
         bindView()
 
         loadFragment()
 
     }
+
+    private fun initSearchView() {
+        searchView = findViewById(R.id.search_view)
+        searchView.setVoiceSearch(false)
+        searchView.setEllipsize(true)
+        searchView.setHintTextColor(Color.GRAY)
+        searchView.setHint("Search")
+        searchView.setOnQueryTextListener(object : MaterialSearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+        })
+
+        searchView.setOnSearchViewListener(object : MaterialSearchView.SearchViewListener {
+            override fun onSearchViewShown() {}
+
+            override fun onSearchViewClosed() {
+
+            }
+        })
+    }
+
 
     private fun bindView() {
         etSearchView    = findViewById(R.id.et_search_view)
@@ -90,6 +122,12 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_home_toolbar, menu)
+
+        //Init searchView
+        val searchViewItem = menu!!.findItem(R.id.menu_search)
+        searchView.setMenuItem(searchViewItem)
+        searchView.isFocused
+
         return super.onCreateOptionsMenu(menu)
     }
 }

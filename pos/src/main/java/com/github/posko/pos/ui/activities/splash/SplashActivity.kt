@@ -3,10 +3,8 @@ package com.github.posko.pos.ui.activities.splash
 import android.os.Bundle
 import com.github.posko.pos.ui.activities.login.LoginActivity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import com.github.posko.core.domain.gateways.SessionGateway
 import com.github.posko.core.domain.interactor.session.CheckSessionUseCase
-import com.github.posko.core.domain.model.EmptyParam
 import com.github.posko.core.domain.model.Session
 import com.github.posko.pos.R
 import com.github.posko.pos.ui.activities.BaseActivity
