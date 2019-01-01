@@ -12,9 +12,9 @@ interface PoskoServices {
 
     fun getProducts() : Deferred<List<ProductRaw>>
 
-    fun getProductVariants(product_id : Int) : Deferred<List<ProductVariantRaw>>
+    fun getProductVariant(product_id : Int) : Deferred<List<ProductVariantRaw>>
 
-    fun getProductVariants() : Deferred<List<ProductVariantRaw>>
+    fun getProductVariants(queryParam : HashMap<String, String>) : Deferred<List<ProductVariantRaw>>
 
     fun getInvoices() : Deferred<List<InvoiceRaw>>
 

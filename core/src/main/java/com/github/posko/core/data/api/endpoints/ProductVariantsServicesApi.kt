@@ -5,6 +5,7 @@ import kotlinx.coroutines.experimental.Deferred
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.QueryMap
 
 interface ProductVariantsServicesApi {
 
@@ -12,6 +13,6 @@ interface ProductVariantsServicesApi {
     fun getProductVariants(@Path("product_id") product_id : Int) : Deferred<List<ProductVariantRaw>>
 
     @GET("/api/v1/variants")
-    fun getProductVariants() : Deferred<List<ProductVariantRaw>>
+    fun getProductVariants(@QueryMap params : HashMap<String, String>) : Deferred<List<ProductVariantRaw>>
 
 }
