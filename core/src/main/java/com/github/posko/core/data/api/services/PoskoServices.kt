@@ -1,10 +1,7 @@
 package com.github.posko.core.data.api.services
 
 import com.github.posko.core.data.api.model.*
-import kotlinx.coroutines.experimental.Deferred
-import retrofit2.Call
-import retrofit2.Response
-import retrofit2.http.Path
+import kotlinx.coroutines.Deferred
 
 interface PoskoServices {
 

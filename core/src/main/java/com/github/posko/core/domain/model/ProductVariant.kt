@@ -1,7 +1,5 @@
 package com.github.posko.core.domain.model
 
-import androidx.room.ColumnInfo
-
 data class ProductVariant(
 
         var id : Int,

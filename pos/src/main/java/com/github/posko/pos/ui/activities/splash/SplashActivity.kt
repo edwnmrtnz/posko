@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.github.posko.pos.ui.activities.login.LoginActivity
 import android.content.Intent
 import com.github.posko.core.domain.gateways.SessionGateway
-import com.github.posko.core.domain.interactor.session.CheckSessionUseCase
 import com.github.posko.core.domain.model.Session
 import com.github.posko.pos.R
 import com.github.posko.pos.ui.activities.BaseActivity
@@ -15,12 +14,10 @@ import javax.inject.Inject
 class SplashActivity : BaseActivity(), SessionGateway.CheckSessionCallback {
 
 
-    @Inject lateinit var checkSessionUseCase: CheckSessionUseCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        checkSessionUseCase.execute(CheckSessionUseCase.Param(this))
     }
 
     override fun hasValidSession(session: Session) {

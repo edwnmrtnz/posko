@@ -1,19 +1,14 @@
 package com.github.posko.core.data.api.services
 
-import android.util.Log
 import com.github.posko.core.data.api.RequestAuthorization
 import com.github.posko.core.data.api.config.ServiceConfiguration
 import com.github.posko.core.data.api.deserializer.*
 import com.github.posko.core.data.api.endpoints.*
 import com.github.posko.core.data.api.model.*
-import com.github.posko.core.domain.model.User
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.experimental.Deferred
-import retrofit2.Call
-import retrofit2.Response
+import kotlinx.coroutines.Deferred
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.reflect.Type
 
 class PoskoServicesFactory(private val config: ServiceConfiguration,
                            private val authorization: RequestAuthorization) : PoskoServices {

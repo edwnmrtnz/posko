@@ -32,13 +32,13 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //Support annotations
-    api 'androidx.annotation:annotation:1.0.0'
+    api 'androidx.annotation:annotation:1.0.1'
 
 
     //Room
-    api 'androidx.room:room-runtime:2.1.0-alpha02'
-    api 'androidx.room:room-rxjava2:2.1.0-alpha02'
-    kapt 'androidx.room:room-compiler:2.1.0-alpha02'
+    api 'androidx.room:room-runtime:2.1.0-alpha03'
+    api 'androidx.room:room-rxjava2:2.1.0-alpha03'
+    kapt 'androidx.room:room-compiler:2.1.0-alpha03'
 
     
     //RxJava
@@ -52,8 +52,8 @@ dependencies {
     api "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
 
     //Coroutines
-    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3'
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.25.3"
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
     api 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0'
 
     //Gson
@@ -69,8 +69,8 @@ dependencies {
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
 
     // Required for instrumented tests
-    testImplementation 'androidx.test:runner:1.1.0'
-    testImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    testImplementation 'androidx.test:runner:1.1.1'
+    testImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
 }
 repositories {

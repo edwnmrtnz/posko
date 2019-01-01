@@ -51,24 +51,22 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'com.miguelcatalan:materialsearchview:1.4.0'
-
-
 
 
     implementation 'androidx.arch.core:core-runtime:2.0.1-alpha01'
 
     //Dagger
-    api "com.google.dagger:dagger:2.16"
-    kapt "com.google.dagger:dagger-compiler:2.16"
-    kapt "com.google.dagger:dagger-android-processor:2.16"
-    api "com.google.dagger:dagger-android-support:2.16"
+    api "com.google.dagger:dagger:2.19"
+    kapt "com.google.dagger:dagger-compiler:2.19"
+    kapt "com.google.dagger:dagger-android-processor:2.19"
+    api "com.google.dagger:dagger-android-support:2.19"
 
     implementation 'com.afollestad.material-dialogs:core:2.0.0-beta4'
 
@@ -79,8 +77,8 @@ dependencies {
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
 
     // Required for instrumented tests
-    testImplementation 'androidx.test:runner:1.1.0'
-    testImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    testImplementation 'androidx.test:runner:1.1.1'
+    testImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     implementation project(':core')
 }

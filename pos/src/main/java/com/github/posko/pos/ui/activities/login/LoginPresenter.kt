@@ -1,12 +1,8 @@
 package com.github.posko.pos.ui.activities.login
 
-import com.github.posko.core.domain.interactor.user.LoginUserUseCase
-import com.github.posko.core.domain.result.Either
-import com.github.posko.core.domain.result.Failure
-import com.github.posko.pos.BuildConfig
 import javax.inject.Inject
 
-class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUserUseCase): LoginContract.Presenter {
+class LoginPresenter @Inject constructor (): LoginContract.Presenter {
 
     private lateinit var view : LoginContract.View
 
@@ -38,16 +34,7 @@ class LoginPresenter @Inject constructor (private var loginUserUseCase: LoginUse
         }
 
         view.showLoading("Authenticating...")
-        loginUserUseCase.execute(LoginUserUseCase.Param(server, account_name, email, password)) {
-            view.hideLoading()
-            if(it.isRight) {
-                view.showHomeActivity()
-            } else {
-                val error = it as Either.Left<Failure>
-                val message = error.error.message
-                view.showPopup(message)
-            }
-        }
+
     }
 
 }
