@@ -13,9 +13,6 @@ data class SessionData (
 
         var domain : String,
 
-        @ColumnInfo(name = "session_holder")
-        var sessionHolder : Int,
-
         @ColumnInfo(name = "auth_token")
         var authToken : String,
 
