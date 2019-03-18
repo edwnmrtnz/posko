@@ -2,7 +2,6 @@ package com.github.posko.pos.gateways.user
 
 import com.github.posko.core.data.api.deserializer.UserDeserializer
 import com.github.posko.core.data.api.model.UserRaw
-import com.github.posko.core.data.extension.toUser
 import com.github.posko.core.domain.gateways.UserGateway
 import com.github.posko.core.domain.model.User
 import com.github.posko.core.domain.result.Either

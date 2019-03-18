@@ -4,18 +4,18 @@ import com.github.posko.core.data.api.model.UserRaw
 import com.github.posko.core.data.database.model.UserData
 import com.github.posko.core.domain.model.User
 
-fun UserRaw.toUserData() : UserData {
+fun UserRaw.toDatabase() : UserData {
     return UserData(id, email, first_name, last_name, token, auth_token, created_at)
 }
 
-fun User.toUserData() : UserData {
+fun User.toDatabase() : UserData {
     return UserData(id, email, firstName, lastName, token, authToken, createdAt)
 }
 
-fun UserRaw.toUser() : User {
+fun UserRaw.toDomain() : User {
     return User(id, email, first_name, last_name, token, auth_token, created_at)
 }
 
-fun UserData.toUser() : User {
-    return User(id, email, firstName, lastName, token, authToken, createdAt)
+fun UserData.toDomain() : User {
+    return User(id, email, first_name, last_name, token, auth_token, created_at)
 }

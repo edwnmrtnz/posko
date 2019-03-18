@@ -7,15 +7,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "sessions")
 data class SessionData (
-
         @PrimaryKey
         var id : Int,
-
         var domain : String,
-
-        @ColumnInfo(name = "auth_token")
-        var authToken : String,
-
-        @ColumnInfo(name = "token")
+        var auth_token : String,
         var token : String
 )
