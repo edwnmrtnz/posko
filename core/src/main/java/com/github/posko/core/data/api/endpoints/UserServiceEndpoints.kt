@@ -5,7 +5,7 @@ import kotlinx.coroutines.Deferred
 
 import retrofit2.http.*
 
-interface UserServicesApi {
+interface UserServiceEndpoints {
 
     @FormUrlEncoded
     @POST("/api/v1/sign_in")

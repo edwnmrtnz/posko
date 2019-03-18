@@ -5,7 +5,7 @@ import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface InvoiceLinesServicesApi {
+interface InvoiceLinesServiceEndpoints {
 
     @GET("api/v1/invoices/{invoice_id}/invoice_lines")
     fun getInvoiceLines(@Path("invoice_id") invoice_id: Int) : Deferred<List<InvoiceLineRaw>>

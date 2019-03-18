@@ -25,7 +25,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setEnableLogging("login")
                 .build()
-                .generateService(UserServicesApi::class.java)
+                .generateService(UserServiceEndpoints::class.java)
                 .login(account_name, email, password)
     }
 
@@ -41,7 +41,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_products")
                 .build()
-                .generateService(ProductsServicesApi::class.java)
+                .generateService(ProductsServiceEndpoints::class.java)
                 .getProducts()
     }
 
@@ -57,7 +57,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_product_variants_for $product_id")
                 .build()
-                .generateService(ProductVariantsServicesApi::class.java)
+                .generateService(ProductVariantServiceEndpoints::class.java)
                 .getProductVariants(product_id)
     }
 
@@ -73,7 +73,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .setEnableLogging("get_product_variants")
                 .build()
-                .generateService(ProductVariantsServicesApi::class.java)
+                .generateService(ProductVariantServiceEndpoints::class.java)
                 .getProductVariants(queryParam)
     }
 
@@ -89,7 +89,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoices")
                 .build()
-                .generateService(InvoiceServicesApi::class.java)
+                .generateService(InvoiceServiceEndpoints::class.java)
                 .getInvoices()
     }
 
@@ -105,7 +105,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
                 .setBasicAuth(authorization.getUsername(), authorization.getPassword())
                 .setEnableLogging("get_invoice_lines")
                 .build()
-                .generateService(InvoiceLinesServicesApi::class.java)
+                .generateService(InvoiceLinesServiceEndpoints::class.java)
                 .getInvoiceLines(invoice_id)
     }
 

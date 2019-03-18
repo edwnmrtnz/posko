@@ -7,7 +7,7 @@ import kotlinx.coroutines.Deferred
 
 interface LoginServices {
 
-    fun loginUser(domain : String, account_name : String, email : String, password : String) : Deferred<UserRaw>
+    suspend fun login(domain : String, account_name : String, email : String, password : String) : UserRaw
 
 
 }

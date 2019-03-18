@@ -5,14 +5,12 @@ import android.util.Log
 import com.github.posko.core.data.api.generator.Encryptor
 import com.github.posko.core.data.api.generator.ServiceGenerator
 import com.github.posko.core.data.api.generator.ServiceLogger
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 
 class ServiceConfigProvider(private val encryptor: Encryptor,
                             private val logger: ServiceLogger) : ServiceConfiguration {
 
     override fun getConfig(): ServiceGenerator.Builder {
         return ServiceGenerator.Builder(encryptor, logger)
-                .addCallAdapterFactory(CoroutineCallAdapterFactory())
     }
 
     class EncryptorImpl : Encryptor {
