@@ -64,21 +64,9 @@ dependencies {
 
     implementation 'com.afollestad.material-dialogs:core:2.0.3'
 
-    // Test tools
-    testImplementation 'junit:junit:4.12'
-    testImplementation "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
-    testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
-    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
-
     // Required for instrumented tests
     testImplementation 'androidx.test:runner:1.1.1'
     testImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-
-    //Dagger
-    api "com.google.dagger:dagger:2.19"
-    kapt "com.google.dagger:dagger-compiler:2.19"
-    kapt "com.google.dagger:dagger-android-processor:2.19"
-    api "com.google.dagger:dagger-android-support:2.19"
 
     implementation project(':core')
 }

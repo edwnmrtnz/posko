@@ -1,4 +1,4 @@
-package com.github.posko.core.domain.request;
+package com.github.posko.shared;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.github.posko.core.domain.interactor
+package com.github.posko.shared.interactor
 
 sealed class Result<out T> {
 
