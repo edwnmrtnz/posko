@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
-
 android {
     compileSdkVersion 28
 
@@ -26,52 +25,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    //Kotlin
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    //Support annotations
-    api 'androidx.annotation:annotation:1.0.1'
-
-
-    //Room
-    api 'androidx.room:room-runtime:2.1.0-alpha03'
-    api 'androidx.room:room-rxjava2:2.1.0-alpha03'
-    kapt 'androidx.room:room-compiler:2.1.0-alpha03'
-
-    
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     //RxJava
     api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
     api "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
-
-    //For Retrofit
-    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
-    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
-    api "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit"
-    api "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
-
-    //Coroutines
-    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
-    api 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
-
-    //Gson
-    api "com.google.code.gson:gson:$rootProject.gson"
-
-    //Mock web server
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
-
-    // Test tools
-    testImplementation 'junit:junit:4.12'
-    testImplementation "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
-    testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
-    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
-
-    // Required for instrumented tests
-    testImplementation 'androidx.test:runner:1.1.1'
-    testImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-
+    implementation project(':shared')
 }
 repositories {
     mavenCentral()

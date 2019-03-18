@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+
+    //Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Support annotations
+    api 'androidx.annotation:annotation:1.0.2'
+
+    //Coroutines
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0"
+
+    //For Retrofit
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    api "com.squareup.retrofit2:converter-scalars:$rootProject.retrofit"
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
+
+    //Gson
+    api "com.google.code.gson:gson:$rootProject.gson"
+
+    //Mock web server
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
+
+    // Test tools
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
+    testImplementation "org.mockito:mockito-inline:$rootProject.mockito"
+    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
+
+    //Room
+    api 'androidx.room:room-runtime:2.1.0-alpha05'
+    api 'androidx.room:room-rxjava2:2.1.0-alpha05'
+    kapt 'androidx.room:room-compiler:2.1.0-alpha05'
+}
