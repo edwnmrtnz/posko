@@ -4,17 +4,7 @@ import com.github.posko.core.domain.model.Session
 
 interface SessionGateway {
 
-    interface CheckSessionCallback {
+    fun createSession(session : Session)
 
-        fun hasValidSession(session : Session)
-
-        fun noSessionFound()
-    }
-
-    fun checkSession (callback : CheckSessionCallback)
-
-    suspend fun createSession(session : Session)
-
-    suspend fun getSession() : Session?
-
+    fun getSession()
 }

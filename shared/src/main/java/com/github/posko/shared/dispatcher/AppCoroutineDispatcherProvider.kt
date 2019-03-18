@@ -1,10 +1,16 @@
 package com.github.posko.shared.dispatcher
 
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
-interface AppCoroutineDispatcherProvider {
 
-    fun ui () : CoroutineDispatcher
+class AppCoroutineDispatcherProvider : AppCoroutineDispatcher {
 
-    fun io () : CoroutineDispatcher
+    override fun ui(): CoroutineDispatcher {
+        return Dispatchers.Main
+    }
+
+    override fun io(): CoroutineDispatcher {
+        return Dispatchers.IO
+    }
 }

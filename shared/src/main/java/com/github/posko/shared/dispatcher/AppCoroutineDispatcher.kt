@@ -1,8 +1,8 @@
-package com.github.posko.core.domain.dispatcher
+package com.github.posko.shared.dispatcher
 
 import kotlinx.coroutines.CoroutineDispatcher
 
-interface AppCoroutineDispatchers {
+interface AppCoroutineDispatcher {
 
     fun ui () : CoroutineDispatcher
 
