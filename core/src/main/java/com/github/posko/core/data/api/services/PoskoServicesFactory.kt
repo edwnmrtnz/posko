@@ -30,19 +30,20 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
     }
 
     override fun getProducts(): Deferred<List<ProductRaw>> {
+        throw NotImplementedError("Sorry")
         val listType = object : TypeToken<MutableList<ProductRaw>>() {}.type
         val gson = gsonBuilder
                 .registerTypeAdapter(listType, ProductsDeserializer())
                 .create()
-        return config
-                .getConfig()
-                .setBaseUrl(authorization.getDomain())
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
-                .setEnableLogging("get_products")
-                .build()
-                .generateService(ProductsServiceEndpoints::class.java)
-                .getProducts()
+//        return config
+//                .getConfig()
+//                .setBaseUrl(authorization.getDomain())
+//                .addConverterFactory(GsonConverterFactory.create(gson))
+//                .setBasicAuth(authorization.getUsername(), authorization.getPassword())
+//                .setEnableLogging("get_products")
+//                .build()
+//                .generateService(ProductsServiceEndpoints::class.java)
+//                .getProducts()
     }
 
     override fun getProductVariant(product_id: Int): Deferred<List<ProductVariantRaw>> {

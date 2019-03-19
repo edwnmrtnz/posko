@@ -58,9 +58,9 @@ class LoginServicesProviderTest : UnitTest() {
 
         server.enqueue(MockResponse().setResponseCode(200).setBody(userRaw))
 
-        val result = loginServicesProvider.
-                loginUser(server.url("/api/v1/sign_in/").toString(), "hello", "hello", "hello")
-                .await()
+        val result = loginServicesProvider
+                .login(server.url("/api/v1/sign_in/").toString(), "hello", "hello", "hello")
+
 
         doPrint(result)
     }
