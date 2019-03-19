@@ -11,6 +11,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
+
     }
 }
 
@@ -41,7 +43,7 @@ ext {
 
     gson = '2.8.4'
 
-    mockito = '2.8.47'
-    hamcrest = '1.3'
-    powerMockito = '1.6.2'
+    mockito         = '2.8.47'
+    hamcrest        = '1.3'
+    powerMockito    = '1.6.2'
 }
