@@ -35,7 +35,7 @@ android {
         prod {
             dimension "default"
             resValue "string", "flavored_app_name", "POSko"
-            buildConfigField("String", "SERVER", "\"http://192.168.10.100:3000\"")
+            buildConfigField("String", "SERVER", "\"http://128.199.184.202\"")
         }
 
         android.variantFilter { variant ->

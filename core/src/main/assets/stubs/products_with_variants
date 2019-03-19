@@ -1,0 +1,57 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "account_id": 2,
+            "title": "Product 1",
+            "vendor": null,
+            "handle": "product-1",
+            "product_type": "regular",
+            "status": "active",
+            "product_status": "active",
+            "created_at": "2019-03-19T15:13:59.399Z",
+            "updated_at": "2019-03-19T15:13:59.399Z",
+            "default_variant_id": null,
+            "variants": [
+                {
+                    "id": 1,
+                    "product_id": 1,
+                    "parent_product_id": null,
+                    "parent_variant_id": null,
+                    "sku": "product1",
+                    "price": "100.0",
+                    "compare_at_price": null,
+                    "barcode": "",
+                    "variant_type": "regular",
+                    "variant_status": 0,
+                    "status": "active",
+                    "created_at": "2019-03-19T15:13:59.405Z",
+                    "updated_at": "2019-03-19T15:13:59.405Z",
+                    "selling_policy": "each",
+                    "cost": "100.0",
+                    "open_price": false,
+                    "default": true
+                },
+                {
+                    "id": 2,
+                    "product_id": 1,
+                    "parent_product_id": null,
+                    "parent_variant_id": null,
+                    "sku": "product1_variant1",
+                    "price": "100.0",
+                    "compare_at_price": null,
+                    "barcode": null,
+                    "variant_type": "regular",
+                    "variant_status": 0,
+                    "status": "active",
+                    "created_at": "2019-03-19T15:14:42.865Z",
+                    "updated_at": "2019-03-19T15:14:42.865Z",
+                    "selling_policy": "each",
+                    "cost": null,
+                    "open_price": false,
+                    "default": false
+                }
+            ]
+        }
+    ]
+}

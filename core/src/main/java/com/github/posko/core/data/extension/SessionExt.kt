@@ -8,5 +8,5 @@ fun Session.toDatabase() : SessionData {
 }
 
 fun SessionData.toDomain() : Session {
-    return Session(id, domain, authToken, token)
+    return Session(id, domain, auth_token, token)
 }
