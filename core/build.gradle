@@ -26,9 +26,15 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    testImplementation 'junit:junit:4.12'
+
+
     //RxJava
+    //noinspection GradleDependency
     api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid"
     api "io.reactivex.rxjava2:rxjava:$rootProject.rxJava"
+
     implementation project(':shared')
 }
 repositories {

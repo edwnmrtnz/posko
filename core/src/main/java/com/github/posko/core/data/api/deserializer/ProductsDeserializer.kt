@@ -1,6 +1,7 @@
 package com.github.posko.core.data.api.deserializer
 
 import com.github.posko.core.data.api.model.ProductRaw
+import com.github.posko.core.data.api.model.ProductWithVariantsRaw
 import com.google.gson.*
 import java.lang.reflect.Type
 
@@ -15,7 +16,7 @@ class ProductsDeserializer : JsonDeserializer<List<ProductRaw>> {
         val productsList = ArrayList<ProductRaw>()
 
         for(item in products) {
-            productsList.add(context.deserialize(item, ProductRaw::class.java))
+            productsList.add(context.deserialize(item, ProductWithVariantsRaw::class.java))
         }
         return productsList
     }
