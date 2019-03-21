@@ -4,5 +4,5 @@ import com.github.posko.core.domain.model.User
 
 interface UserGateway {
 
-    fun saveUser(user : User)
+    fun save(user : User)
 }

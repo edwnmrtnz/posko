@@ -8,7 +8,7 @@ import retrofit2.http.QueryMap
 
 interface ProductVariantServiceEndpoints {
 
-    @GET("/api/v1/products/{product_id}/variants")
+    @GET("/api/v1/variants/{product_id}/variants")
     fun getProductVariants(@Path("product_id") product_id : Int) : Deferred<List<ProductVariantRaw>>
 
     @GET("/api/v1/variants")

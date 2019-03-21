@@ -43,7 +43,7 @@ class PoskoServicesFactory(private val config: ServiceConfiguration,
 //                .setEnableLogging("get_products")
 //                .build()
 //                .generateService(ProductsServiceEndpoints::class.java)
-//                .getProducts()
+//                .getVariants()
     }
 
     override fun getProductVariant(product_id: Int): Deferred<List<ProductVariantRaw>> {

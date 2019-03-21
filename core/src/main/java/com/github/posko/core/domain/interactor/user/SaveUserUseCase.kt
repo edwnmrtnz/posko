@@ -10,7 +10,7 @@ class SaveUserUseCase @Inject constructor(private var appCoroutineDispatcher: Ap
                                           private var gateway : UserGateway): UseCase<SaveUserUseCase.Response, SaveUserUseCase.Param> (appCoroutineDispatcher){
 
     override suspend fun start(param: Param): Response {
-        gateway.saveUser(param.user)
+        gateway.save(param.user)
         return Response()
     }
 

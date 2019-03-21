@@ -10,7 +10,7 @@ data class ProductVariant (
         var sku : String,
         var price : Double,
         var compareAtPrice: Double?,
-        var barcode : String,
+        var barcode : String?,
         var variantType : String?,
         var variantStatus : Int?,
         var status : String,
@@ -18,6 +18,6 @@ data class ProductVariant (
         var updatedAt : Date,
         var sellingPolicy : String,
         var cost : Double?,
-        var openPrice : Double,
-        var default : Boolean
+        var openPrice : Boolean?,
+        var default : Boolean?
 )

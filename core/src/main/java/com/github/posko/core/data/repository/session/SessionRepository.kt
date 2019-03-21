@@ -8,11 +8,11 @@ import com.github.posko.core.domain.model.Session
 import com.github.posko.shared.exception.DataNotAvailableException
 
 class SessionRepository(private val dao : SessionDao) : SessionGateway {
-    override suspend fun createSession(session: Session) {
+    override suspend fun create(session: Session) {
         dao.insert(session.toDatabase())
     }
 
-    override suspend fun getSession() : Session {
+    override suspend fun get() : Session {
         val session = dao.getSession()
         return session?.toDomain() ?: throw DataNotAvailableException("No session found")
     }

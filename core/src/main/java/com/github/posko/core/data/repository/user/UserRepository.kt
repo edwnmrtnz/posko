@@ -6,7 +6,7 @@ import com.github.posko.core.domain.gateways.UserGateway
 import com.github.posko.core.domain.model.User
 
 class UserRepository (private val dao : UserDao): UserGateway {
-    override fun saveUser(user: User) {
+    override fun save(user: User) {
         dao.insert(user.toDatabase())
     }
 }

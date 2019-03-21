@@ -11,7 +11,7 @@ class ProductsDeserializer : JsonDeserializer<List<ProductRaw>> {
     override fun deserialize(json: JsonElement, typeOfT: Type?, context: JsonDeserializationContext): List<ProductRaw> {
         val jsonObject : JsonObject = json.asJsonObject
 
-        val products = jsonObject.getAsJsonArray("products")
+        val products = jsonObject.getAsJsonArray("variants")
 
         val productsList = ArrayList<ProductRaw>()
 

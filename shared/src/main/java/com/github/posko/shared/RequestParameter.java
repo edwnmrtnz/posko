@@ -41,6 +41,7 @@ public class RequestParameter {
         }
 
         public RequestParameter build() {
+            if(params.get("limit") == null) params.put("limit", String.valueOf(50));
             return new RequestParameter(params);
         }
     }

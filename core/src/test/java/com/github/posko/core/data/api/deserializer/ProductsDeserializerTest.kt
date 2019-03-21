@@ -18,14 +18,14 @@ class ProductsDeserializerTest : UnitTest() {
 //                .registerTypeAdapter(listType, ProductsDeserializer())
 //                .create()
 //
-//        val products : List<ProductRaw> = gson.fromJson(
-//                readFile("stubs/products.txt"), listType
+//        val variants : List<ProductRaw> = gson.fromJson(
+//                readFile("stubs/variants.txt"), listType
 //        )
 //
-//        assertNotNull(products)
+//        assertNotNull(variants)
 //
-//   //x     assertEquals(3, products.size)
+//   //x     assertEquals(3, variants.size)
 //
-//        doPrint(products)
+//        doPrint(variants)
     }
 }

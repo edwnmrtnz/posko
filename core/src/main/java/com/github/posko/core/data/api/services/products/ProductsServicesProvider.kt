@@ -4,6 +4,7 @@ import com.github.posko.core.data.api.RequestAuthorization
 import com.github.posko.core.data.api.config.ServiceConfiguration
 import com.github.posko.core.data.api.deserializer.ProductsDeserializer
 import com.github.posko.core.data.api.endpoints.ProductsServiceEndpoints
+import com.github.posko.core.data.api.model.CountRaw
 import com.github.posko.core.data.api.model.ProductWithVariantsRaw
 import com.github.posko.shared.exception.HttpErrorException
 import com.github.posko.shared.exception.ServiceException
@@ -35,12 +36,11 @@ class ProductsServicesProvider(private val config : ServiceConfiguration,
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
                     .generateService(ProductsServiceEndpoints::class.java)
-                    .getProducts()
+                    .getProducts(params)
                     .enqueue(object : Callback<MutableList<ProductWithVariantsRaw>> {
                         override fun onFailure(call: Call<MutableList<ProductWithVariantsRaw>>, t: Throwable) {
                             it.resumeWithException(ServiceException(t.message!!))
                         }
-
                         override fun onResponse(call: Call<MutableList<ProductWithVariantsRaw>>, response: Response<MutableList<ProductWithVariantsRaw>>) {
                             if(response.isSuccessful) {
                                 it.resume(response.body()!!)
@@ -51,6 +51,32 @@ class ProductsServicesProvider(private val config : ServiceConfiguration,
                         }
                     })
 
+        }
+    }
+
+    override suspend fun fetchCount(params: HashMap<String, String>): Int {
+        return suspendCancellableCoroutine {
+            config.getConfig()
+                    .setEnableLogging("fetch_product_count")
+                    .setBasicAuth(requestAuthorization.getUsername(), requestAuthorization.getPassword())
+                    .setBaseUrl(requestAuthorization.getDomain())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                    .generateService(ProductsServiceEndpoints::class.java)
+                    .getCount(params)
+                    .enqueue(object : Callback<CountRaw> {
+                        override fun onFailure(call: Call<CountRaw>, t: Throwable) {
+                            it.resumeWithException(ServiceException(t.message!!))
+                        }
+                        override fun onResponse(call: Call<CountRaw>, response: Response<CountRaw>) {
+                            if(response.isSuccessful) {
+                                it.resume(response.body()!!.count)
+                            } else {
+                                it.resumeWithException(HttpErrorException(response.code(),
+                                        response.errorBody()?.string() ?: "Something went wrong"))
+                            }
+                        }
+                    })
         }
     }
 }

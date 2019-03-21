@@ -11,7 +11,7 @@ class CreateSessionUseCase @Inject constructor(private var appCoroutineDispatche
 
     override suspend fun start(param: Param): Response {
         val session =  Session(param.userId, param.domain, param.authToken, param.token)
-        gateway.createSession(session)
+        gateway.create(session)
         return Response(session)
     }
 
