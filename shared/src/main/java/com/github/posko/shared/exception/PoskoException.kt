@@ -2,4 +2,4 @@ package com.github.posko.shared.exception
 
 import java.lang.Exception
 
-class ServiceException(message : String) : PoskoException(message)
+open class PoskoException (message : String) : Exception(message)

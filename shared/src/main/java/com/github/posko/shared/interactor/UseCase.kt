@@ -2,6 +2,7 @@ package com.github.posko.shared.interactor
 
 import kotlinx.coroutines.*
 import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
+import com.github.posko.shared.exception.PoskoException
 import java.lang.Exception
 import java.lang.IllegalStateException
 import java.lang.NullPointerException
@@ -12,7 +13,6 @@ abstract class UseCase<out R, in P> (private val dispatcher: AppCoroutineDispatc
     private val job = SupervisorJob()
 
     private val scope : CoroutineScope = CoroutineScope(dispatcher.io() + job)
-
 
     abstract suspend fun start(param : P) : R
 
@@ -36,20 +36,12 @@ abstract class UseCase<out R, in P> (private val dispatcher: AppCoroutineDispatc
                 } catch (e: Exception) {
                     e.printStackTrace()
                     when (e) {
-                        is IllegalStateException -> {
-                            throw e
-                        }
-                        is NullPointerException -> {
-                            throw e
-                        }
-                        is SQLException -> {
-                            throw e
-                        }
-                        is ArrayIndexOutOfBoundsException -> {
-                            throw e
+                        is PoskoException -> {
+                            results(Result.Error(e))
                         }
                         else -> {
-                            results(Result.Error(e))
+                            e.printStackTrace()
+                            throw e
                         }
                     }
                 }
