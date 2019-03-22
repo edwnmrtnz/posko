@@ -1,6 +1,7 @@
 package com.github.posko.core.domain.interactor.product
 
 import com.github.posko.core.domain.gateways.ProductGateway
+import com.github.posko.core.domain.interactor.productvariant.SaveProductVariantsUseCase
 import com.github.posko.core.domain.model.Product
 import com.github.posko.core.domain.model.ProductVariant
 import com.github.posko.shared.RequestParameter
@@ -10,7 +11,9 @@ import com.github.posko.shared.interactor.UseCase
 import javax.inject.Inject
 
 class FetchProductsUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,
-                                               private var gateway: ProductGateway): UseCase<FetchProductsUseCase.Response, Unit>(appCoroutineDispatcher){
+                                               private var gateway: ProductGateway,
+                                               private var saveProductsUseCase: SaveProductsUseCase,
+                                               private var saveProductVariantsUseCase: SaveProductVariantsUseCase): UseCase<FetchProductsUseCase.Response, Unit>(appCoroutineDispatcher){
 
     override suspend fun start(param: Unit): Response {
         val lastId = try {
@@ -30,6 +33,8 @@ class FetchProductsUseCase @Inject constructor(private var appCoroutineDispatche
             products.add(productWithVariant.product)
             variants.addAll(productWithVariant.variants)
         }
+        saveProductsUseCase.execute(SaveProductsUseCase.Param(products))
+        saveProductVariantsUseCase.execute(SaveProductVariantsUseCase.Param(variants))
         return Response(products)
     }
 

@@ -8,7 +8,7 @@ import java.lang.IllegalStateException
 import java.lang.NullPointerException
 import java.sql.SQLException
 
-abstract class UseCase<out R, in P> (private val dispatcher: AppCoroutineDispatcher) {
+abstract class  UseCase<out R, in P> (private val dispatcher: AppCoroutineDispatcher) {
 
     private val job = SupervisorJob()
 
