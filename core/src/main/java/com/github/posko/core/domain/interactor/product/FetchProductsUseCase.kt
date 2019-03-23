@@ -1,7 +1,7 @@
 package com.github.posko.core.domain.interactor.product
 
 import com.github.posko.core.domain.gateways.ProductGateway
-import com.github.posko.core.domain.interactor.productvariant.SaveProductVariantsUseCase
+import com.github.posko.core.domain.interactor.product.variant.SaveProductVariantsUseCase
 import com.github.posko.core.domain.model.Product
 import com.github.posko.core.domain.model.ProductVariant
 import com.github.posko.shared.RequestParameter
@@ -24,6 +24,7 @@ class FetchProductsUseCase @Inject constructor(private var appCoroutineDispatche
         val params = RequestParameter.Builder()
                 .limit(100)
         if(lastId != null) params.sinceId(lastId)
+        else params.activeOnly()
 
         val data = gateway.fetch(params.build().params)
 

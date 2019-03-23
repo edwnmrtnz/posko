@@ -9,6 +9,6 @@ import com.github.posko.core.domain.model.Product
 @Dao
 interface ProductDao : BaseDao<ProductData> {
 
-    @Query("SELECT id FROM variants ORDER BY updated_at DESC LIMIT 1")
+    @Query("SELECT id FROM products ORDER BY updated_at DESC LIMIT 1")
     fun getLastRecordedId() : Int?
 }

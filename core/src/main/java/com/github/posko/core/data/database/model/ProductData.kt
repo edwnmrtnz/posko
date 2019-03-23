@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName = "variants")
+@Entity(tableName = "products")
 data class ProductData (
         @PrimaryKey var id : Int,
         var account_id : Int,

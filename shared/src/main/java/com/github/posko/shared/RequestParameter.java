@@ -40,9 +40,16 @@ public class RequestParameter {
             return this;
         }
 
+        public Builder activeOnly() {
+            params.put("status", "active");
+            return this;
+        }
+
+
         public RequestParameter build() {
             if(params.get("limit") == null) params.put("limit", String.valueOf(50));
             return new RequestParameter(params);
         }
+
     }
 }
