@@ -3,6 +3,7 @@ package com.github.posko.core.data.api.services.products
 import com.github.posko.core.data.api.RequestAuthorization
 import com.github.posko.core.data.api.config.ServiceConfiguration
 import com.github.posko.core.data.api.deserializer.ProductsDeserializer
+import com.github.posko.core.data.api.deserializer.ProductsWithVariantsDeserializer
 import com.github.posko.core.data.api.endpoints.ProductsServiceEndpoints
 import com.github.posko.core.data.api.model.CountRaw
 import com.github.posko.core.data.api.model.ProductWithVariantsRaw
@@ -25,7 +26,7 @@ class ProductsServicesProvider(private val config : ServiceConfiguration,
         val listType = object : TypeToken<MutableList<ProductWithVariantsRaw>>() {}.type
 
         val gson = GsonBuilder()
-                .registerTypeAdapter(listType, ProductsDeserializer())
+                .registerTypeAdapter(listType, ProductsWithVariantsDeserializer())
                 .create()
 
         return suspendCancellableCoroutine {
@@ -39,7 +40,7 @@ class ProductsServicesProvider(private val config : ServiceConfiguration,
                     .getProducts(params)
                     .enqueue(object : Callback<MutableList<ProductWithVariantsRaw>> {
                         override fun onFailure(call: Call<MutableList<ProductWithVariantsRaw>>, t: Throwable) {
-                            it.resumeWithException(ServiceException(t.message!!))
+                            it.resumeWithException(ServiceException(t.localizedMessage))
                         }
                         override fun onResponse(call: Call<MutableList<ProductWithVariantsRaw>>, response: Response<MutableList<ProductWithVariantsRaw>>) {
                             if(response.isSuccessful) {

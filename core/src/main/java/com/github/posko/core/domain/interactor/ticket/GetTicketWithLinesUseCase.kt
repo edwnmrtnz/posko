@@ -15,6 +15,6 @@ class GetTicketWithLinesUseCase @Inject constructor(private var appCoroutineDisp
 
     data class Param(var ticketNumber : Int)
 
-    data class Response(var ticketsWithLine : MutableList<TicketWithLines>)
+    data class Response(var ticketsWithLine : TicketWithLines)
 
 }

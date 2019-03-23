@@ -13,5 +13,5 @@ interface TicketGateway {
 
     suspend fun getTicketsWithLines() : MutableList<TicketWithLines>
 
-    suspend fun getTicketWithLines(ticketNumber : Int) : MutableList<TicketWithLines>
+    suspend fun getTicketWithLines(ticketNumber : Int) : TicketWithLines
 }

@@ -1,4 +1,4 @@
 package com.github.posko.core.domain.model
 
-class TicketWithLines (val ticket : Ticket,
-                       var ticketLine : MutableList<TicketLine>)
+class TicketWithLines (var ticket : Ticket,
+                       var ticketLines : MutableList<TicketLine>)

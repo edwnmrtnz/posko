@@ -1,4 +1,4 @@
-package com.github.posko.core.domain.interactor.productvariant
+package com.github.posko.core.domain.interactor.product.variant
 
 import com.github.posko.core.domain.gateways.ProductVariantGateway
 import com.github.posko.core.domain.model.ProductVariant
