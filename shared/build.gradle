@@ -53,9 +53,9 @@ dependencies {
     api 'com.squareup.okhttp3:mockwebserver:3.11.0'
 
     //Room
-    api 'androidx.room:room-runtime:2.1.0-alpha05'
-    api 'androidx.room:room-rxjava2:2.1.0-alpha05'
-    kapt 'androidx.room:room-compiler:2.1.0-alpha05'
+    api 'androidx.room:room-runtime:2.1.0-alpha06'
+    api 'androidx.room:room-rxjava2:2.1.0-alpha06'
+    kapt 'androidx.room:room-compiler:2.1.0-alpha06'
 
     //Dagger
     api "com.google.dagger:dagger:2.19"
@@ -67,6 +67,7 @@ dependencies {
     api "org.hamcrest:hamcrest-all:$rootProject.hamcrest"
     api "org.mockito:mockito-inline:$rootProject.mockito"
     androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
+
 
     //Powermock
     api 'org.powermock:powermock:1.6.5'
