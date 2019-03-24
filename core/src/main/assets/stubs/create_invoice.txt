@@ -1,0 +1,14 @@
+{
+	"invoice": {
+	  "invoice_number": 1,
+	  "invoice_lines": [
+	    {
+	      "variant_id": 1,
+	      "product_id": 1,
+	      "price": 100,
+	      "title": "Product 1",
+	      "quantity": 2
+	    }
+	  ]
+	}
+}

@@ -1,24 +1,15 @@
 package com.github.posko.core.data.api.deserializer
 
 import com.github.posko.core.data.api.model.InvoiceRaw
-import com.google.gson.JsonDeserializationContext
-import com.google.gson.JsonDeserializer
-import com.google.gson.JsonElement
+import com.google.gson.*
 import java.lang.reflect.Type
 
-class InvoiceDeserializer : JsonDeserializer<List<InvoiceRaw>> {
+class InvoiceDeserializer : JsonDeserializer<InvoiceRaw> {
+    override fun deserialize(json: JsonElement, typeOfT: Type?, context: JsonDeserializationContext): InvoiceRaw {
+        val jsonObject : JsonObject = json.asJsonObject
 
-    override fun deserialize(json: JsonElement, typeOfT: Type?, context: JsonDeserializationContext): List<InvoiceRaw> {
-        val jsonObject = json.asJsonObject
+        val invoice = jsonObject.getAsJsonObject("invoice")
 
-        val invoices = jsonObject.getAsJsonArray("invoices")
-
-        val invoicesList = ArrayList<InvoiceRaw>()
-
-        for(item in invoices) {
-            invoicesList.add(context.deserialize(item, InvoiceRaw::class.java))
-        }
-
-        return invoicesList
+        return Gson().fromJson(invoice, InvoiceRaw::class.java)
     }
 }
