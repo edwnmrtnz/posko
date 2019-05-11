@@ -8,7 +8,7 @@ import com.github.posko.core.domain.gateways.ProductGateway
 import com.github.posko.core.domain.model.Count
 import com.github.posko.core.domain.model.Product
 import com.github.posko.core.domain.model.ProductWithVariant
-import com.github.posko.shared.exception.DataNotAvailableException
+import com.github.posko.base.exception.DataNotAvailableException
 
 class ProductRepository(private val dao : ProductDao,
                         private val productsServices : ProductServices) : ProductGateway {

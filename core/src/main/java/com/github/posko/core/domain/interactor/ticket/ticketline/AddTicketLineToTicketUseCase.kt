@@ -3,11 +3,10 @@ package com.github.posko.core.domain.interactor.ticket.ticketline
 import com.github.posko.core.domain.exception.TicketDoesNotExistException
 import com.github.posko.core.domain.gateways.TicketLineGateway
 import com.github.posko.core.domain.interactor.ticket.GetTicketUseCase
-import com.github.posko.core.domain.model.Ticket
 import com.github.posko.core.domain.model.TicketLine
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.exception.DataNotAvailableException
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.exception.DataNotAvailableException
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class AddTicketLineToTicketUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

@@ -2,8 +2,8 @@ package com.github.posko.core.domain.interactor.product
 
 import com.github.posko.core.domain.gateways.ProductGateway
 import com.github.posko.core.domain.model.Product
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class SaveProductsUseCase @Inject constructor

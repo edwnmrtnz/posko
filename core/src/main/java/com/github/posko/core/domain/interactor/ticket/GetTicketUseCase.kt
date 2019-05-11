@@ -2,8 +2,8 @@ package com.github.posko.core.domain.interactor.ticket
 
 import com.github.posko.core.domain.gateways.TicketGateway
 import com.github.posko.core.domain.model.Ticket
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class GetTicketUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

@@ -2,13 +2,12 @@ package com.github.posko.core.data.api.services.products
 
 import com.github.posko.core.data.api.RequestAuthorization
 import com.github.posko.core.data.api.config.ServiceConfiguration
-import com.github.posko.core.data.api.deserializer.ProductsDeserializer
 import com.github.posko.core.data.api.deserializer.ProductsWithVariantsDeserializer
 import com.github.posko.core.data.api.endpoints.ProductsServiceEndpoints
 import com.github.posko.core.data.api.model.CountRaw
 import com.github.posko.core.data.api.model.ProductWithVariantsRaw
-import com.github.posko.shared.exception.HttpErrorException
-import com.github.posko.shared.exception.ServiceException
+import com.github.posko.base.exception.HttpErrorException
+import com.github.posko.base.exception.ServiceException
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.suspendCancellableCoroutine

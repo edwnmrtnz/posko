@@ -7,8 +7,8 @@ import com.github.posko.core.data.api.endpoints.InvoiceServiceEndpoints
 import com.github.posko.core.data.api.model.InvoiceRaw
 import com.github.posko.core.data.api.serializer.CreateInvoiceSerializer
 import com.github.posko.core.domain.forms.InvoiceForm
-import com.github.posko.shared.exception.HttpErrorException
-import com.github.posko.shared.exception.ServiceException
+import com.github.posko.base.exception.HttpErrorException
+import com.github.posko.base.exception.ServiceException
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.suspendCancellableCoroutine
 import retrofit2.Call

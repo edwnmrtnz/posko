@@ -2,8 +2,8 @@ package com.github.posko.core.domain.interactor.session
 
 import com.github.posko.core.domain.gateways.SessionGateway
 import com.github.posko.core.domain.model.Session
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class CreateSessionUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

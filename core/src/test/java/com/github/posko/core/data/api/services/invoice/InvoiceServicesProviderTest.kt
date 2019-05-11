@@ -8,12 +8,10 @@ import com.github.posko.core.data.api.generator.Encryptor
 import com.github.posko.core.data.api.generator.ServiceLogger
 import com.github.posko.core.domain.forms.InvoiceForm
 import com.github.posko.core.domain.forms.InvoiceLineForm
-import com.github.posko.shared.exception.ServiceException
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
-import org.junit.Assert
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

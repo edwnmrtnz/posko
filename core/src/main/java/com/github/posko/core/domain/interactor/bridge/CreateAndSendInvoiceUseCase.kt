@@ -5,8 +5,8 @@ import com.github.posko.core.domain.forms.InvoiceLineForm
 import com.github.posko.core.domain.interactor.invoice.SendInvoiceUseCase
 import com.github.posko.core.domain.interactor.ticket.GetTicketWithLinesUseCase
 import com.github.posko.core.domain.model.Invoice
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class CreateAndSendInvoiceUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

@@ -4,7 +4,7 @@ import com.github.posko.core.data.api.config.ServiceConfiguration
 import com.github.posko.core.data.api.deserializer.UserDeserializer
 import com.github.posko.core.data.api.endpoints.LoginServiceEndpoints
 import com.github.posko.core.data.api.model.UserRaw
-import com.github.posko.shared.exception.HttpErrorException
+import com.github.posko.base.exception.HttpErrorException
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.suspendCancellableCoroutine
 import retrofit2.Call

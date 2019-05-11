@@ -4,8 +4,8 @@ import com.github.posko.core.domain.gateways.AuthenticationGateway
 import com.github.posko.core.domain.interactor.session.CreateSessionUseCase
 import com.github.posko.core.domain.interactor.user.SaveUserUseCase
 import com.github.posko.core.domain.model.User
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

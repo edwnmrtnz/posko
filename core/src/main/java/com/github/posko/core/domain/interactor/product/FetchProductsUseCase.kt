@@ -4,10 +4,10 @@ import com.github.posko.core.domain.gateways.ProductGateway
 import com.github.posko.core.domain.interactor.product.variant.SaveProductVariantsUseCase
 import com.github.posko.core.domain.model.Product
 import com.github.posko.core.domain.model.ProductVariant
-import com.github.posko.shared.RequestParameter
-import com.github.posko.shared.dispatcher.AppCoroutineDispatcher
-import com.github.posko.shared.exception.DataNotAvailableException
-import com.github.posko.shared.interactor.UseCase
+import com.github.posko.base.RequestParameter
+import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.exception.DataNotAvailableException
+import com.github.posko.base.interactor.UseCase
 import javax.inject.Inject
 
 class FetchProductsUseCase @Inject constructor(private var appCoroutineDispatcher: AppCoroutineDispatcher,

@@ -5,7 +5,7 @@ import com.github.posko.core.data.extension.toDatabase
 import com.github.posko.core.data.extension.toDomain
 import com.github.posko.core.domain.gateways.SessionGateway
 import com.github.posko.core.domain.model.Session
-import com.github.posko.shared.exception.DataNotAvailableException
+import com.github.posko.base.exception.DataNotAvailableException
 
 class SessionRepository(private val dao : SessionDao) : SessionGateway {
     override suspend fun create(session: Session) {
