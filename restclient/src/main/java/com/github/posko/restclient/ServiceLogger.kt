@@ -1,4 +1,4 @@
-package com.github.posko.core.data.api.generator
+package com.github.posko.restclient
 
 interface ServiceLogger {
 

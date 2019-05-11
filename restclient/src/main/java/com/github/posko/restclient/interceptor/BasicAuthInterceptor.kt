@@ -1,4 +1,4 @@
-package com.github.posko.core.data.api.generator.interceptor
+package com.github.posko.restclient.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
