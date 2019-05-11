@@ -1,0 +1,17 @@
+--> POST http://localhost:3000/sign_in
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 61
+
+account_name=example&email=posko%40example.com&password=posko
+--> END POST (61-byte body)
+<-- 200 OK http://localhost:3000/sign_in (364ms)
+Content-Type: application/json; charset=utf-8
+Set-Cookie: _posko_web=TTcwaTk1Znd0TnRoTUlNdnBFc3RuZTViUjBRTzdQZFFkZUErdzNnSkc2TTN1SWROTUlNZlRZM1M0RWdRNHZ6ZEk4V3ZkWVdpRW05ZXpsM1dvQXNQNlR5UlNQZ1RTWXpmQUxSM2lZOFBkR2o2VzBUTHhDMlZiRld0TUVrV2RML3l4WEcrOEhLWmxtRmJLSWlQVW5lcnpDS0MvbkR3UmFyTTVHWUtGSGE0YnZzPS0tVWZ2WFUwZ1pZZGFsenRiVFNQNFVHQT09--e04ca8c7687ede60ce684e68a14e0de56e2a4092; path=/; HttpOnly
+ETag: W/"cb2787d0ab62e04c7bea8938d88051d5"
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 20e0496b-df57-4ee5-9e65-f81d4091a010
+X-Runtime: 0.306931
+Transfer-Encoding: chunked
+
+{"user":{"id":1,"account_id":1,"email":"posko@example.com","first_name":"Juan","last_name":"Dela Cruz","middle_name":null,"status":"active","suffix":null,"title":null,"user_status":0,"user_type":null}}
+<-- END HTTP (201-byte body)

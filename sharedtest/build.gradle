@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -31,13 +32,8 @@ dependencies {
     testImplementation "junit:junit:${testlibs.junit}"
     androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
 
-    //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "org.mockito:mockito-core:${testlibs.mockito_core}"
+    implementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
 
-    //For Retrofit
-    api "com.squareup.retrofit2:retrofit:${retrofit.retrofit}"
-    api "com.squareup.retrofit2:converter-gson:${retrofit.retrofit}"
-    api "com.squareup.retrofit2:converter-scalars:${retrofit.retrofit}"
-    api "com.squareup.okhttp3:logging-interceptor:${retrofit.okhttp3}"
-
+    implementation project(':base')
 }
