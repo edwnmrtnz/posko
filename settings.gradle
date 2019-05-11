@@ -1,1 +1,1 @@
-include ':core', ':pos', ':cart', ':shared'
+include ':base', ':restclient', ':session', ':sharedtest'
