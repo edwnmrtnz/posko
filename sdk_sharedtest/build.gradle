@@ -35,5 +35,5 @@ dependencies {
     implementation "org.mockito:mockito-core:${testlibs.mockito_core}"
     implementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
 
-    implementation project(':base')
+    implementation project(':sdk_base')
 }

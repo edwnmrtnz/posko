@@ -47,8 +47,8 @@ dependencies {
     implementation "androidx.room:room-runtime:$arch.room"
     kapt "androidx.room:room-compiler:$arch.room"
 
-    implementation project(path: ':base')
-    testImplementation project(path: ':sharedtest')
-    androidTestImplementation project(path: ':sharedtest')
-    implementation project(path: ':restclient')
+    implementation project(path: ':sdk_base')
+    testImplementation project(path: ':sdk_sharedtest')
+    androidTestImplementation project(path: ':sdk_sharedtest')
+    implementation project(path: ':sdk_restclient')
 }
