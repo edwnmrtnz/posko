@@ -1,1 +1,1 @@
-include ':base', ':restclient', ':session', ':sharedtest'
+include ':sdk_base', ':sdk_restclient', ':sdk_session', ':sdk_sharedtest', ':ftr_login', ':ftr_home', ':app_pos'
