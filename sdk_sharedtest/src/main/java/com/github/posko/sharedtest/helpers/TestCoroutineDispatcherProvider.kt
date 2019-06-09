@@ -1,6 +1,6 @@
 package com.github.posko.sharedtest.helpers
 
-import com.github.posko.base.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.sdk.dispatcher.AppCoroutineDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 

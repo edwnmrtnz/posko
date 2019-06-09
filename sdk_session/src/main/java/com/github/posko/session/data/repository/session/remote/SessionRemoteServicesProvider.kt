@@ -1,7 +1,7 @@
 package com.github.posko.session.data.repository.session.remote
 
-import com.github.posko.base.exception.HttpErrorException
-import com.github.posko.base.exception.ServiceFailureException
+import com.github.posko.base.sdk.exception.HttpErrorException
+import com.github.posko.base.sdk.exception.ServiceFailureException
 import com.github.posko.restclient.RestClient
 import com.github.posko.session.data.api.deserializer.UserDeserializer
 import com.github.posko.session.data.api.endpoint.SessionServicesEndpoint
@@ -15,7 +15,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.IllegalStateException
-import java.lang.NullPointerException
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 

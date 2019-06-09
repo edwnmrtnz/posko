@@ -1,15 +1,10 @@
 package com.github.posko.session.domain.interactor.user
 
-import com.github.posko.base.exception.DataNotAvailableException
-import com.github.posko.session.data.api.deserializer.UserDeserializer
-import com.github.posko.session.data.api.model.UserRaw
-import com.github.posko.session.data.extension.toDomain
+import com.github.posko.base.sdk.exception.DataNotAvailableException
 import com.github.posko.session.domain.gateway.UserGateway
 import com.github.posko.session.domain.interactor.FakeUserDataProvider
 import com.github.posko.session.domain.model.User
-import com.github.posko.sharedtest.fakes.SessionFakeData
 import com.github.posko.sharedtest.helpers.TestCoroutineDispatcherProvider
-import com.google.gson.GsonBuilder
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 import org.junit.Before

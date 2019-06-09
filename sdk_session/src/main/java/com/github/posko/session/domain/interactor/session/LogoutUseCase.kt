@@ -1,7 +1,7 @@
 package com.github.posko.session.domain.interactor.session
 
-import com.github.posko.base.dispatcher.AppCoroutineDispatcher
-import com.github.posko.base.interactor.Interactor
+import com.github.posko.base.sdk.dispatcher.AppCoroutineDispatcher
+import com.github.posko.base.sdk.interactor.Interactor
 import com.github.posko.session.domain.gateway.SessionGateway
 import javax.inject.Inject
 

@@ -1,7 +1,7 @@
 
 package com.github.posko.session.data.repository.user.local
 
-import com.github.posko.base.exception.DataNotAvailableException
+import com.github.posko.base.sdk.exception.DataNotAvailableException
 import com.github.posko.session.data.db.dao.UserDao
 import com.github.posko.session.data.extension.toDatabase
 import com.github.posko.session.data.extension.toDomain
