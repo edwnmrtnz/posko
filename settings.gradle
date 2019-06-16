@@ -1,4 +1,4 @@
-include ':app-admin',
+include ':app-admin', ':toolkit-dagger',
         ':app-pos',
         ':app-dashboard',
         ':base-feature',
