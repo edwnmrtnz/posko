@@ -10,17 +10,19 @@ import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RestClient private constructor(private val baseUrl: String,
-                                     private val enableLogging: Boolean,
-                                     private val loggingTag: String,
-                                     private val loggingLevel: HttpLoggingInterceptor.Level,
-                                     private val basicAuth: String?,
-                                     private val converterFactories: MutableList<Converter.Factory>,
-                                     private val callAdapterFactories: MutableList<CallAdapter.Factory>,
-                                     private val logger: ServiceLogger?,
-                                     private val timeOutUnit: TimeUnit?,
-                                     private val timeoutValue: Long,
-                                     private val interceptors : MutableCollection<Interceptor>) {
+class RestClient private constructor (
+        private val baseUrl: String,
+        private val enableLogging: Boolean,
+        private val loggingTag: String,
+        private val loggingLevel: HttpLoggingInterceptor.Level,
+        private val basicAuth: String?,
+        private val converterFactories: MutableList<Converter.Factory>,
+        private val callAdapterFactories: MutableList<CallAdapter.Factory>,
+        private val logger: ServiceLogger?,
+        private val timeOutUnit: TimeUnit?,
+        private val timeoutValue: Long,
+        private val interceptors : MutableCollection<Interceptor>
+) {
 
     fun <S> createService(serviceClass : Class<S> ) : S {
         val httpClient = OkHttpClient.Builder()
