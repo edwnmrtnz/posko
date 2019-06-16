@@ -1,6 +1,15 @@
-include ':base_sdk', ':sdk_auth',
-        ':sdk_sharedtest',
-        ':ftr_login',
-        ':ftr_home',
-        ':app_pos',
-        ':lib_restclient'
+include ':app-admin',
+        ':app-pos',
+        ':app-dashboard',
+        ':base-feature',
+        ':base-service',
+        ':feature-login',
+        ':feature-home',
+        ':gateway-services',
+        ':gateway-services-posko',
+        ':service-authentication',
+        ':service-invoice',
+        ':service-product',
+        ':toolkit-restclient',
+        ':shared-test'
+

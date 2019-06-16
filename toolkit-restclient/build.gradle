@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Test
+    testImplementation "junit:junit:${testlibs.junit}"
+    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
+
+    //Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+
+    //For Retrofit
+    api "com.squareup.retrofit2:retrofit:${retrofit.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${retrofit.retrofit}"
+    api "com.squareup.retrofit2:converter-scalars:${retrofit.retrofit}"
+    api "com.squareup.okhttp3:logging-interceptor:${retrofit.okhttp3}"
+}
