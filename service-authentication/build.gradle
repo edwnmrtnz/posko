@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
 
@@ -30,25 +31,29 @@ dependencies {
 
     //Test
     testImplementation "junit:junit:${testlibs.junit}"
-    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-
     testImplementation "org.mockito:mockito-core:${testlibs.mockito_core}"
     testImplementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
+    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
+    androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
 
-    //Dagger
-    implementation "com.google.dagger:dagger:${dagger.dagger}"
-    implementation "com.google.dagger:dagger-android-support:${dagger.dagger}"
-    kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
-    kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
 
-    //Room
-    implementation "androidx.room:room-runtime:$arch.room"
-    kapt "androidx.room:room-compiler:$arch.room"
+//    //Dagger
+//    implementation "com.google.dagger:dagger:${dagger.dagger}"
+//    implementation "com.google.dagger:dagger-android-support:${dagger.dagger}"
+//    kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
+//    kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
 
-    implementation project(path: ':base-service')
+//    //Room
+//    implementation "androidx.room:room-runtime:$arch.room"
+//    kapt "androidx.room:room-compiler:$arch.room"
+
+
+    implementation project(path: ':toolkit-essentials')
+
     implementation project(path: ':toolkit-dagger')
+    implementation project(path: ':toolkit-restclient')
+
     testImplementation project(path: ':shared-test')
     androidTestImplementation project(path: ':shared-test')
-    implementation project(path: ':toolkit-restclient')
+
 }

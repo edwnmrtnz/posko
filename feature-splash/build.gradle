@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation "junit:junit:${testlibs.junit}"
+    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
+    androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
+    testImplementation "org.mockito:mockito-core:${testlibs.mockito_core}"
+    testImplementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${testlibs.espresso_core}"
+
+    implementation project(path: ':posko-theme')
+    implementation project(path: ':gateway-services')
+}

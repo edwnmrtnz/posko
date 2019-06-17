@@ -3,8 +3,8 @@ package com.github.posko.service.authentication.data.repository.session.remote
 import com.github.posko.service.authentication.data.api.endpoint.SessionServicesEndpoint
 import com.github.posko.service.authentication.data.api.model.UserRaw
 import com.github.posko.service.authentication.domain.model.UserCookie
-import com.github.posko.base.service.exception.HttpErrorException
-import com.github.posko.base.service.exception.ServiceFailureException
+import com.github.posko.toolkit.essentials.exception.HttpErrorException
+import com.github.posko.toolkit.essentials.exception.ServiceFailureException
 import com.github.posko.service.authentication.data.api.deserializer.UserDeserializer
 import com.github.posko.service.authentication.data.extension.toDomain
 import com.github.posko.toolkit.restclient.RestClient
