@@ -30,4 +30,11 @@ dependencies {
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
+    //Test
+    testImplementation "junit:junit:${testlibs.junit}"
+    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
+    androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
+
+    implementation project(path: ':toolkit-essentials')
+
 }
