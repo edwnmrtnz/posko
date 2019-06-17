@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Test
+    testImplementation "junit:junit:${testlibs.junit}"
+    androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
+
+    //Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+
+    //reactive
+    api "io.reactivex.rxjava2:rxandroid:${rxjava.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${rxjava.rxjava}"
+
+    //Gson
+    api "com.google.code.gson:gson:$versions.gson"
+
+    //Room
+    implementation "androidx.room:room-runtime:$arch.room"
+    kapt "androidx.room:room-compiler:$arch.room"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:${dagger.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${dagger.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
+    kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
+
+    //Mock web server
+    api 'com.squareup.okhttp3:mockwebserver:3.11.0'
+}
