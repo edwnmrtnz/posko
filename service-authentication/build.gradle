@@ -31,7 +31,7 @@ dependencies {
     //Test
     testImplementation "junit:junit:${testlibs.junit}"
     androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
     testImplementation "org.mockito:mockito-core:${testlibs.mockito_core}"
     testImplementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
@@ -47,6 +47,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$arch.room"
 
     implementation project(path: ':base-service')
+    implementation project(path: ':toolkit-dagger')
     testImplementation project(path: ':shared-test')
     androidTestImplementation project(path: ':shared-test')
     implementation project(path: ':toolkit-restclient')

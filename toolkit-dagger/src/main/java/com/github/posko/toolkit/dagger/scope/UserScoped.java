@@ -1,4 +1,4 @@
-package com.github.posko.base.service.di.scope;
+package com.github.posko.toolkit.dagger.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

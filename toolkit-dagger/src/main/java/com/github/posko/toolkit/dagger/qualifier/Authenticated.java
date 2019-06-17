@@ -1,4 +1,4 @@
-package com.github.posko.base.service.di.qualifier;
+package com.github.posko.toolkit.dagger.qualifier;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
