@@ -2,6 +2,7 @@ package com.github.posko.feature.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.github.posko.toolkit.ui.replace
 
 class SplashActivity : AppCompatActivity() {
 
@@ -9,11 +10,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        if(savedInstanceState != null) {
-            supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.container, SplashFragment())
-                    .commit()
+        savedInstanceState?.let {
+            replace(R.id.container, SplashFragment())
         }
     }
 }
