@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.github.posko.feature.login">
     
-    <application android:theme="@style/TakeNotesAppTheme">
-        <activity android:name=".LoginActivity"></activity>
+    <application android:theme="@style/PoskoAppTheme">
+        <activity
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait"
+            android:name=".LoginActivity"/>
     </application>
 
 </manifest>

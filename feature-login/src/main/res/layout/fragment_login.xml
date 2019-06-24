@@ -1,14 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/scrollView"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:isScrollContainer="true"
+    android:background="@android:color/white"
+    android:fillViewport="true">
     
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_margin="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+        
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/login_label_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+            <View
+                android:layout_marginTop="8dp"
+                android:background="@color/colorSecondary"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="2dp"
+                android:layout_height="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="2dp"/>
+        
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    
+    
+        <Space
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textSize="14sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#adadad"
+            android:text="@string/login_label_account_id" />
+    
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    
+            <androidx.appcompat.widget.AppCompatEditText
+                style="@style/PoskoAppTheme.EditText.TextAppearance"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:hint="@string/login_hint_account_id"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etAccountId"/>
+        
+        </com.google.android.material.textfield.TextInputLayout>
+    
+    
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#adadad"
+            android:text="@string/login_label_email_address" />
+    
+    
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    
+            <androidx.appcompat.widget.AppCompatEditText
+                style="@style/PoskoAppTheme.EditText.TextAppearance"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:hint="@string/login_hint_email_address"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etEmailAddress"/>
+    
+        </com.google.android.material.textfield.TextInputLayout>
+        
+    
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#adadad"
+            android:text="@string/login_hint_password" />
+    
+        
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <androidx.appcompat.widget.AppCompatEditText
+                style="@style/PoskoAppTheme.EditText.TextAppearance"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:hint="@string/login_hint_password"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etPassword"/>
+        
+        </com.google.android.material.textfield.TextInputLayout>
+    
+    
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginBottom="30dp"
+            android:id="@+id/btnSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/login_action_sign_in"
+            android:textAllCaps="false" />
+        
+    
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</FrameLayout>
+    
+</ScrollView>

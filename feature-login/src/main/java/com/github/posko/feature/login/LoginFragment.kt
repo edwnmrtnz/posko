@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 
 
 class LoginFragment : Fragment() {
@@ -13,6 +14,11 @@ class LoginFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_login, container, false)
+
+        with(view) {
+            val scrollView : ScrollView = findViewById(R.id.scrollView)
+            scrollView.requestFocus()
+        }
 
         return view
     }

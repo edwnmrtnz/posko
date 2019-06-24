@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">ftr_login</string>
+    
+    <string name="login_label_sign_in">Sign In</string>
+    
+    <string name="login_hint_email_address">Email Address</string>
+    <string name="login_hint_password">Password</string>
+    
+    <string name="login_action_sign_in">Sign In</string>
+    <string name="login_label_account_id">Account ID</string>
+    <string name="login_hint_account_id">Account ID</string>
+    <string name="login_label_email_address">Email Address</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

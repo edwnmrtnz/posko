@@ -3,6 +3,7 @@ package net.nueca.posko.app.di.component;
 import android.app.Application;
 
 import net.nueca.posko.app.PoskoApplication;
+import net.nueca.posko.app.di.modules.ActivityBindingsModule;
 import net.nueca.posko.app.di.modules.AppModule;
 import net.nueca.posko.app.di.modules.PoskoNavigationModule;
 
@@ -22,6 +23,8 @@ import dagger.android.support.AndroidSupportInjectionModule;
         AndroidSupportInjectionModule.class,
 
         AppModule.class,
+
+        ActivityBindingsModule.class,
 
         PoskoNavigationModule.class
 

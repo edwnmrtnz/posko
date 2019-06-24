@@ -41,7 +41,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     implementation project(path: ':toolkit-dagger')
-    
+    kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
+    kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
+
+
     implementation project(path: ':posko-theme')
 
     implementation project(path: ':feature-splash')

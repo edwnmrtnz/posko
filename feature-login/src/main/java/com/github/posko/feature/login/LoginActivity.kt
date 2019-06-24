@@ -10,8 +10,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        savedInstanceState?.let {
-            replace(R.id.container, LoginFragment())
-        }
+        replace(R.id.container, LoginFragment())
+
     }
 }

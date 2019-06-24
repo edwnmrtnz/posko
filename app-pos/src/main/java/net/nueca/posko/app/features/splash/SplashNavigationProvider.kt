@@ -1,4 +1,4 @@
-package net.nueca.posko.app.navigations
+package net.nueca.posko.app.features.splash
 
 import android.content.Intent
 import com.github.posko.feature.login.LoginActivity

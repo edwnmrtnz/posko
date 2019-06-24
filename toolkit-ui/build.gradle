@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -37,5 +38,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     implementation "com.google.android.material:material:${material.material}"
+
+    implementation project(path: ':toolkit-dagger')
+    kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
+    kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
+
 
 }
