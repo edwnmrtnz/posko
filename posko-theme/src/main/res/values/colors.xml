@@ -26,6 +26,7 @@
     <color name="colorOnBackground">#212121</color>
     
     
+    <color name="field_color">#adadad</color>
     <color name="light">#ebebeb</color>
     
     <color name="textColorPrimary">#474747</color>
