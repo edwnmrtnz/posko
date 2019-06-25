@@ -1,8 +1,8 @@
 package com.github.posko.service.authentication.domain.interactor.user
 
 import com.github.posko.service.authentication.domain.gateway.UserGateway
-import com.github.posko.toolkit.essentials.dispatcher.AppCoroutineDispatcher
-import com.github.posko.toolkit.essentials.interactor.Interactor
+import com.github.posko.core.dispatcher.AppCoroutineDispatcher
+import com.github.posko.core.interactor.Interactor
 import javax.inject.Inject
 
 class DestroyUsersUseCase @Inject constructor(

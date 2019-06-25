@@ -33,7 +33,7 @@ dependencies {
     androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
     androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
 
-    implementation project(path: ':toolkit-essentials')
+    implementation project(path: ':posko-core')
 
     implementation project(path: ':toolkit-dagger')
     implementation project(path: ':toolkit-restclient')

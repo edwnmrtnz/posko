@@ -3,7 +3,7 @@ package com.github.posko.service.authentication.data.repository.user.local
 import com.github.posko.service.authentication.data.db.dao.UserDao
 import com.github.posko.service.authentication.data.extension.toDatabase
 import com.github.posko.service.authentication.domain.model.User
-import com.github.posko.toolkit.essentials.exception.DataNotAvailableException
+import com.github.posko.core.exception.DataNotAvailableException
 import com.github.posko.service.authentication.data.extension.toDomain
 
 class UserLocalServicesProvider(private val dao: UserDao) : UserLocalServices {

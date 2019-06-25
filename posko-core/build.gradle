@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -28,11 +29,30 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    api 'com.google.android.material:material:1.1.0-alpha07'
 
     //Test
     testImplementation "junit:junit:${testlibs.junit}"
     androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
-    androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
 
+    //Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+
+    //reactive
+    api "io.reactivex.rxjava2:rxandroid:${rxjava.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${rxjava.rxjava}"
+
+    //Gson
+    api "com.google.code.gson:gson:$versions.gson"
+
+    //Room
+    api "androidx.room:room-runtime:$arch.room"
+    kapt "androidx.room:room-compiler:$arch.room"
+
+    //Mock web server
+    api 'com.squareup.okhttp3:mockwebserver:3.11.0'
 }

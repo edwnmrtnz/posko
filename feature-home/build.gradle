@@ -34,7 +34,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${testlibs.espresso_core}"
 
 
-    implementation project(path: ':posko-theme')
+    implementation project(path: ':posko-core')
     implementation project(path: ':gateway-services')
 
 }
