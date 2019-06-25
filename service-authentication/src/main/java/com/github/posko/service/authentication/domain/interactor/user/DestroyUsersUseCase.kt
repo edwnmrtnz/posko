@@ -5,9 +5,9 @@ import com.github.posko.core.dispatcher.AppCoroutineDispatcher
 import com.github.posko.core.interactor.Interactor
 import javax.inject.Inject
 
-class DestroyUsersUseCase @Inject constructor(
-        appCoroutineDispatcher: AppCoroutineDispatcher,
-        private var gateway: UserGateway
+class DestroyUsersUseCase @Inject constructor (
+    appCoroutineDispatcher: AppCoroutineDispatcher,
+    private var gateway: UserGateway
 ) : Interactor<DestroyUsersUseCase.Response, Unit>(appCoroutineDispatcher) {
     override suspend fun start(param: Unit): Response {
         gateway.destroy()

@@ -11,8 +11,8 @@ import javax.inject.Inject
  * found
  */
 class GetActiveSessionUseCase @Inject constructor (
-        appCoroutineDispatcher: AppCoroutineDispatcher,
-        private var gateway: SessionGateway
+    appCoroutineDispatcher: AppCoroutineDispatcher,
+    private var gateway: SessionGateway
 ) : Interactor<GetActiveSessionUseCase.Response, Unit>(appCoroutineDispatcher) {
 
     override suspend fun start(param: Unit): Response {

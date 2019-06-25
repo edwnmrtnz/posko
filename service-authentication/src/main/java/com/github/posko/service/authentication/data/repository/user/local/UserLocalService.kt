@@ -2,7 +2,7 @@ package com.github.posko.service.authentication.data.repository.user.local
 
 import com.github.posko.service.authentication.domain.model.User
 
-interface UserLocalServices {
+interface UserLocalService {
 
     fun save(user: User)
 

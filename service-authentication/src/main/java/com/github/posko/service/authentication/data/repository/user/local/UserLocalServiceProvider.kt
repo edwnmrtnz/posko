@@ -6,7 +6,9 @@ import com.github.posko.service.authentication.domain.model.User
 import com.github.posko.core.exception.DataNotAvailableException
 import com.github.posko.service.authentication.data.extension.toDomain
 
-class UserLocalServicesProvider(private val dao: UserDao) : UserLocalServices {
+class UserLocalServiceProvider (
+    private val dao: UserDao
+) : UserLocalService {
 
     override fun save(user: User) {
         dao.insert(user.toDatabase())

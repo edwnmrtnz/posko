@@ -5,9 +5,9 @@ import com.github.posko.core.dispatcher.AppCoroutineDispatcher
 import com.github.posko.core.interactor.Interactor
 import javax.inject.Inject
 
-class LogoutUseCase @Inject constructor(
-        appCoroutineDispatcher: AppCoroutineDispatcher,
-        private var gateway: SessionGateway
+class LogoutUseCase @Inject constructor (
+    appCoroutineDispatcher: AppCoroutineDispatcher,
+    private var gateway: SessionGateway
 ) : Interactor<LogoutUseCase.Response, Unit>(appCoroutineDispatcher) {
 
     override suspend fun start(param: Unit): Response {

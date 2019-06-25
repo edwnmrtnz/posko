@@ -1,12 +1,14 @@
 package com.github.posko.service.authentication.data.repository.user
 
-import com.github.posko.service.authentication.data.repository.user.local.UserLocalServices
-import com.github.posko.service.authentication.data.repository.user.remote.UserRemoteServices
+import com.github.posko.service.authentication.data.repository.user.local.UserLocalService
+import com.github.posko.service.authentication.data.repository.user.remote.UserRemoteService
 import com.github.posko.service.authentication.domain.gateway.UserGateway
 import com.github.posko.service.authentication.domain.model.User
 
-class UserRepository(val local: UserLocalServices,
-                     val remote: UserRemoteServices) : UserGateway {
+class UserRepository (
+    private val local: UserLocalService,
+    private val remote: UserRemoteService
+) : UserGateway {
 
     override fun save(user: User) {
         local.save(user)

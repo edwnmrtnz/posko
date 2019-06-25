@@ -7,8 +7,8 @@ import com.github.posko.core.interactor.Interactor
 import javax.inject.Inject
 
 class SaveSessionUseCase @Inject constructor (
-        appCoroutineDispatcher: AppCoroutineDispatcher,
-        private var gateway: SessionGateway
+    appCoroutineDispatcher: AppCoroutineDispatcher,
+    private var gateway: SessionGateway
 ) : Interactor<SaveSessionUseCase.Response, SaveSessionUseCase.Param>(appCoroutineDispatcher) {
 
     override suspend fun start(param: Param): Response {

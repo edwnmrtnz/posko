@@ -6,7 +6,10 @@ import com.github.posko.service.authentication.data.extension.toDomain
 import com.github.posko.service.authentication.domain.exception.NoActiveSessionException
 import com.github.posko.service.authentication.domain.model.Session
 
-class SessionLocalServicesProvider(private val dao: SessionDao) : SessionLocalServices {
+class SessionLocalServiceProvider (
+    private val dao: SessionDao
+) : SessionLocalService {
+
     override suspend fun getActiveSession(): Session {
         return dao.getActiveSession()?.toDomain() ?: throw NoActiveSessionException()
     }

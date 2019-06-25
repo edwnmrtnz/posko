@@ -5,6 +5,8 @@ package com.github.posko.gateway.services
  */
 interface AuthenticationService {
 
-    fun authenticate(accountId : String, email : String, password : String)
+
+
+    fun authenticate(domain : String, accountId : String, email : String, password : String)
 
 }

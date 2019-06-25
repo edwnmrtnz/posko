@@ -17,7 +17,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
-class SessionRemoteServicesProvider(private val client: RestClient.Builder) : SessionRemoteServices {
+class SessionRemoteServiceProvider (
+    private val client: RestClient.Builder
+) : SessionRemoteService {
 
     override suspend fun signIn(domain: String, accountName: String, email: String, password: String): UserCookie {
         val gson = GsonBuilder()
