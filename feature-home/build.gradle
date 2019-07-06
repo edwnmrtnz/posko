@@ -33,8 +33,5 @@ dependencies {
     testImplementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${testlibs.espresso_core}"
 
-
-    implementation project(path: ':posko-core')
-    implementation project(path: ':gateway-services')
-
+    api project(path: ':feature-base')
 }

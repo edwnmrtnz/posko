@@ -10,12 +10,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import com.github.posko.gateway.services.AuthenticationService
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlinx.android.synthetic.main.fragment_login.view.etAccountId
+import javax.inject.Inject
 
 
 class LoginFragment : Fragment() {
+
+    @Inject lateinit var authenticationService: AuthenticationService
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -37,21 +41,31 @@ class LoginFragment : Fragment() {
         val email = view.etEmailAddress.text?.trim()
         val password = view.etPassword.text?.trim()
 
-        if(accountId.isNullOrEmpty())
+        var hasError = false
+        if(accountId.isNullOrEmpty()) {
             setError("Account Id can't be empty",
-                    view.tvAccountIdLabel,
-                    view.etAccountId,
-                    view.tilAccountId)
-        if(email.isNullOrEmpty())
+                view.tvAccountIdLabel,
+                view.etAccountId,
+                view.tilAccountId)
+            hasError = true
+        }
+
+        if(email.isNullOrEmpty()){
             setError("Email Address can't be empty",
-                    view.tvEmailAddressLabel,
-                    view.etEmailAddress,
-                    view.tilEmailAddress)
-        if(password.isNullOrEmpty())
+                view.tvEmailAddressLabel,
+                view.etEmailAddress,
+                view.tilEmailAddress)
+            hasError = true
+        }
+
+        if(password.isNullOrEmpty()) {
             setError("Password can't be empty",
-                    view.tvPasswordLabel,
-                    view.etPassword,
-                    view.tilPassword)
+                view.tvPasswordLabel,
+                view.etPassword,
+                view.tilPassword)
+            hasError = true
+        }
+
     }
 
     private fun setError(errorMessage : String,

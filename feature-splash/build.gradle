@@ -28,8 +28,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation "junit:junit:${testlibs.junit}"
     androidTestImplementation "androidx.test:runner:${testlibs.test_runner}"
     androidTestImplementation "androidx.test.ext:junit:${testlibs.junit_extension}"
@@ -37,8 +35,5 @@ dependencies {
     testImplementation "org.mockito:mockito-inline:${testlibs.mockito_inline}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${testlibs.espresso_core}"
 
-    implementation project(path: ':posko-core')
-    api project(path: ':toolkit-ui')
-    implementation project(path: ':gateway-services')
-    implementation project(path: ':toolkit-dagger')
+    api project(path: ':feature-base')
 }

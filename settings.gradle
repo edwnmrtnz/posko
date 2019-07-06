@@ -1,4 +1,4 @@
-include ':app-admin',
+include ':app-admin', ':feature-base',
         ':posko-core',
         ':toolkit-dagger',
         ':toolkit-ui',

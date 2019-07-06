@@ -23,6 +23,12 @@ android {
         }
     }
 
+    android {
+        lintOptions {
+            lintConfig file("lint.xml")
+        }
+    }
+
 }
 
 dependencies {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="colorPrimary">#FFF</color>
+    
+    <color name="colorPrimaryVariant">#33464d57</color>
+    
+    <color name="colorOnPrimary">#000</color>
+    
+    <color name="colorSecondary">#039BE5</color>
+    
+    <color name="colorSecondaryVariant">#039BE5</color>
+    
+    <color name="colorOnSecondary">#FFFFFF</color>
+    
+    <color name="colorError">#F44336</color>
+    
+    <color name="colorOnError">#FFFFFF</color>
+    
+    <color name="colorSurface">#FFFFFF</color>
+    
+    <color name="colorOnSurface">#212121</color>
+    
+    <color name="colorBackground">#FAFAFA</color>
+    
+    <color name="colorOnBackground">#212121</color>
+    
+    
+    <color name="field_color">#adadad</color>
+    <color name="light">#ebebeb</color>
+    
+    <color name="textColorPrimary">#474747</color>
+    
+    
+    
+    <color name="colorPalette1Variant">#FFD4C1</color>
+    <color name="colorPalette2Variant">#fee3bf</color>
+    <color name="colorPalette3Variant">#d2ebde</color>
+    <color name="colorPalette4Variant">#e5eef2</color>
+    <color name="colorPalette5Variant">#b2bcca</color>
+    <color name="colorPalette6Variant">#f4dbf6</color>
+    
+    <color name="colorOnBackgroundAlpha80">#cc000000</color>
+    <color name="colorOnBackgroundAlpha64">#a3000000</color>
+    <color name="colorOnBackgroundAlpha32">#52000000</color>
+    <color name="colorOnBackgroundAlpha16">#29000000</color>
+    <color name="colorOnBackgroundAlpha8">#14000000</color>
+    <color name="colorOnBackgroundAlpha4">#0a000000</color>
+    <color name="colorOnBackgroundAlpha2">#05000000</color>
+    
+    <color name="colorOnSurfaceAlpha80">#cc000000</color>
+    <color name="colorOnSurfaceAlpha64">#a3000000</color>
+    <color name="colorOnSurfaceAlpha32">#52000000</color>
+    <color name="colorOnSurfaceAlpha16">#29000000</color>
+    <color name="colorOnSurfaceAlpha8">#14000000</color>
+    <color name="colorOnSurfaceAlpha4">#0a000000</color>
+    <color name="colorOnSurfaceAlpha2">#05000000</color>
+    
+    <color name="colorOnBackgroundFlat80">#333333</color>
+    <color name="colorOnBackgroundFlat64">#5c5c5c</color>
+    <color name="colorOnBackgroundFlat32">#adadad</color>
+    <color name="colorOnBackgroundFlat16">#d6d6d6</color>
+    <color name="colorOnBackgroundFlat8">#ebebeb</color>
+    <color name="colorOnBackgroundFlat4">#f5f5f5</color>
+    <color name="colorOnBackgroundFlat2">#fafafa</color>
+    
+    <color name="colorOnSurfaceFlat80">#333333</color>
+    <color name="colorOnSurfaceFlat64">#5c5c5c</color>
+    <color name="colorOnSurfaceFlat32">#adadad</color>
+    <color name="colorOnSurfaceFlat16">#d6d6d6</color>
+    <color name="colorOnSurfaceFlat8">#ebebeb</color>
+    <color name="colorOnSurfaceFlat4">#f5f5f5</color>
+    <color name="colorOnSurfaceFlat2">#fafafa</color>
+    
+</resources>

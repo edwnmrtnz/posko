@@ -8,7 +8,7 @@ open class UnitTest {
     private var gsonBuilder : GsonBuilder = GsonBuilder().setPrettyPrinting()
 
     protected fun doPrint(any : Any) {
-        System.out.println(gsonBuilder.create().toJson(any))
+        println(gsonBuilder.create().toJson(any))
     }
 
     protected fun readFile(fileNameWithExt: String) : String {
