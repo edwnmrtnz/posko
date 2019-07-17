@@ -4,6 +4,7 @@ import android.content.Intent
 import com.github.posko.feature.login.LoginActivity
 import com.github.posko.feature.splash.SplashFragment
 import com.github.posko.feature.splash.SplashNavigation
+import javax.inject.Inject
 
 /**
  * Created by edwinmartinez on June 20, 2019

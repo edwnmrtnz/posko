@@ -1,5 +1,6 @@
 package net.nueca.posko.app.di.modules
 
+import com.github.posko.feature.login.LoginActivity
 import com.github.posko.feature.splash.SplashActivity
 import com.github.posko.toolkit.dagger.scope.ActivityScoped
 import dagger.Module
@@ -14,5 +15,9 @@ abstract class ActivityBindingsModule {
 
     @ActivityScoped
     @ContributesAndroidInjector(modules = [SplashModule::class])
-    abstract fun bindSplashActivity() : SplashActivity
+    abstract fun contributeSplashActivity() : SplashActivity
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract fun contributeLoginActivity() : LoginActivity
 }

@@ -1,14 +1,12 @@
 package com.github.posko.feature.splash
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.github.posko.toolkit.ui.BaseFragment
-import com.github.posko.toolkit.ui.delay
+import com.github.posko.feature.base.BaseFragment
+import com.github.posko.feature.base.delay
 import javax.inject.Inject
 
 

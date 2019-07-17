@@ -5,7 +5,7 @@ import android.app.Application;
 import net.nueca.posko.app.PoskoApplication;
 import net.nueca.posko.app.di.modules.ActivityBindingsModule;
 import net.nueca.posko.app.di.modules.AppModule;
-import net.nueca.posko.app.di.modules.PoskoNavigationModule;
+import net.nueca.posko.app.di.modules.NavigationModule;
 
 import javax.inject.Singleton;
 
@@ -26,7 +26,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 
         ActivityBindingsModule.class,
 
-        PoskoNavigationModule.class
+        NavigationModule.class
 
 })
 public interface AppComponent extends AndroidInjector<PoskoApplication> {

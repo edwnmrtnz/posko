@@ -5,6 +5,6 @@ package com.github.posko.feature.login
  */
 interface LoginNavigation {
 
-    fun onLoginSuccess()
+    fun onLoginSuccess(fragment : LoginFragment)
 
 }

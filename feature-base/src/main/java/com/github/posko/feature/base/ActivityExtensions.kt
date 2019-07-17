@@ -1,4 +1,4 @@
-package com.github.posko.toolkit.ui
+package com.github.posko.feature.base
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity

@@ -1,8 +1,8 @@
 package com.github.posko.feature.splash
 
 import android.os.Bundle
-import com.github.posko.toolkit.ui.BaseActivity
-import com.github.posko.toolkit.ui.replace
+import com.github.posko.feature.base.BaseActivity
+import com.github.posko.feature.base.replace
 
 class SplashActivity : BaseActivity() {
 

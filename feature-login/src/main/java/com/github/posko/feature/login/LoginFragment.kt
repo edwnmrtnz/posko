@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
+import com.github.posko.feature.base.BaseFragment
 import com.github.posko.gateway.services.AuthenticationService
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_login.view.*
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_login.view.etAccountId
 import javax.inject.Inject
 
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
 
     @Inject lateinit var authenticationService: AuthenticationService
 
@@ -31,6 +32,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.scrollView.requestFocus()
+
         view.btnSignIn.setOnClickListener {
             validate(view)
         }
