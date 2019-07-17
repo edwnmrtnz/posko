@@ -17,6 +17,13 @@ android {
 
     }
 
+    android {
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,6 +35,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    api "androidx.constraintlayout:constraintlayout:${androidx.constraintlayout}"
+    api "androidx.appcompat:appcompat:${androidx.appcompat}"
+
+    api 'androidx.core:core-ktx:1.0.2'
+    api 'com.google.android.material:material:1.1.0-alpha08'
 
     api project(path: ':gateway-services')
     api project(path: ':posko-core')

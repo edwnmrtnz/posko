@@ -1,5 +1,4 @@
-package com.github.posko.toolkit.ui
-
+package com.github.posko.feature.base.dialog
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -8,8 +7,8 @@ import android.os.Bundle
 import androidx.annotation.NonNull
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.DialogFragment
+import com.github.posko.feature.base.R
 import java.lang.IllegalStateException
-
 
 class LoadingProgressDialog : DialogFragment() {
 

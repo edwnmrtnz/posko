@@ -6,10 +6,9 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
 
-
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -29,23 +28,10 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-
-    implementation "androidx.constraintlayout:constraintlayout:${androidx.constraintlayout}"
-    implementation "androidx.appcompat:appcompat:${androidx.appcompat}"
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
-
-    implementation "com.google.android.material:material:${material.material}"
 
     implementation project(path: ':toolkit-dagger')
     kapt "com.google.dagger:dagger-compiler:${dagger.dagger}"
     kapt "com.google.dagger:dagger-android-processor:${dagger.dagger}"
-
-    api "androidx.constraintlayout:constraintlayout:${androidx.constraintlayout}"
-    api "androidx.appcompat:appcompat:${androidx.appcompat}"
-    api 'androidx.core:core-ktx:1.0.2'
-    api 'com.google.android.material:material:1.1.0-alpha07'
 
 }

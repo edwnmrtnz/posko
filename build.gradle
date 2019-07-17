@@ -37,7 +37,7 @@ buildscript {
     ext.androidx = [
             'cardview'              : '1.0.0',
             'recyclerview'          : '1.1.0-alpha04',
-            'appcompat'             : '1.1.0-beta01',
+            'appcompat'             : '1.1.0-rc01',
             'multidex'              : '2.0.1',
             'constraintlayout'      : '2.0.0-beta2',
             'core_ktx'              : '1.0.2'
