@@ -44,7 +44,10 @@ dependencies {
     api 'androidx.core:core-ktx:1.0.2'
     api 'com.google.android.material:material:1.1.0-alpha08'
 
-    api project(path: ':gateway-services')
+    api 'com.github.edwnmrtnz:awesomeforms:1.0.0.0-alpha10'
+
+
+    api project(path: ':posko-domain')
     api project(path: ':posko-core')
     api project(path: ':toolkit-ui')
     api project(path: ':toolkit-dagger')

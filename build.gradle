@@ -76,26 +76,27 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
+
     }
 
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
-
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-
         //Solution for NoSuchElementException
         classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
 
     }
 
     
-    }
+}
 
 allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 

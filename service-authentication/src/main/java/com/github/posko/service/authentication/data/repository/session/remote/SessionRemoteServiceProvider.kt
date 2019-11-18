@@ -3,8 +3,8 @@ package com.github.posko.service.authentication.data.repository.session.remote
 import com.github.posko.service.authentication.data.api.endpoint.SessionServicesEndpoint
 import com.github.posko.service.authentication.data.api.model.UserRaw
 import com.github.posko.service.authentication.domain.model.UserCookie
-import com.github.posko.core.exception.HttpErrorException
-import com.github.posko.core.exception.ServiceFailureException
+import com.github.posko.core.exception.PoskoHttpErrorException
+import com.github.posko.core.exception.PoskoServiceFailureException
 import com.github.posko.service.authentication.data.api.deserializer.UserDeserializer
 import com.github.posko.service.authentication.data.extension.toDomain
 import com.github.posko.toolkit.restclient.RestClient
@@ -35,7 +35,7 @@ class SessionRemoteServiceProvider (
                     .signIn(accountName, email, password)
                     .enqueue(object : Callback<UserRaw> {
                         override fun onFailure(call: Call<UserRaw>, t: Throwable) {
-                            it.resumeWithException(ServiceFailureException(t.message!!, t))
+                            it.resumeWithException(PoskoServiceFailureException(t.message!!, t))
                         }
 
                         override fun onResponse(call: Call<UserRaw>, response: Response<UserRaw>) {
@@ -47,7 +47,7 @@ class SessionRemoteServiceProvider (
                                     it.resume(userCookie)
                                 }
                             } else {
-                                it.resumeWithException(HttpErrorException(response.code(), response.errorBody()?.string()
+                                it.resumeWithException(PoskoHttpErrorException(response.code(), response.errorBody()?.string()
                                         ?: response.message()))
                                 System.out.println(response.message())
                             }
@@ -64,14 +64,14 @@ class SessionRemoteServiceProvider (
                     .signOut()
                     .enqueue(object : Callback<String> {
                         override fun onFailure(call: Call<String>, t: Throwable) {
-                            it.resumeWithException(ServiceFailureException(t.message!!, t))
+                            it.resumeWithException(PoskoServiceFailureException(t.message!!, t))
                         }
 
                         override fun onResponse(call: Call<String>, response: Response<String>) {
                             if (response.isSuccessful) {
                                 it.resume(Unit)
                             } else {
-                                it.resumeWithException(HttpErrorException(response.code(), response.errorBody()?.string()
+                                it.resumeWithException(PoskoHttpErrorException(response.code(), response.errorBody()?.string()
                                         ?: response.message()))
                                 System.out.println(response.message())
                             }
