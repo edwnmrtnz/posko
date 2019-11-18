@@ -41,11 +41,10 @@ dependencies {
     api "androidx.constraintlayout:constraintlayout:${androidx.constraintlayout}"
     api "androidx.appcompat:appcompat:${androidx.appcompat}"
 
-    api 'androidx.core:core-ktx:1.0.2'
-    api 'com.google.android.material:material:1.1.0-alpha08'
+    api 'androidx.core:core-ktx:1.1.0'
+    api 'com.google.android.material:material:1.2.0-alpha01'
 
-    api 'com.github.edwnmrtnz:awesomeforms:1.0.0.0-alpha10'
-
+    api 'com.github.edwnmrtnz:awesomeforms:1.0.0.0-alpha13'
 
     api project(path: ':posko-domain')
     api project(path: ':posko-core')
