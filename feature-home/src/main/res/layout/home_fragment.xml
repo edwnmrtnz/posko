@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="6sp"
+            android:maxLines="1"
+            android:textAlignment="center"
+            style="?attr/textAppearanceHeadline6"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            android:text="@string/home_title_posko"/>
+        
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d6d6d6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    
+    
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+        
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_checkout"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                  />
+        
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+            
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Checkout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="Create new transactions."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+        
+                </androidx.appcompat.widget.LinearLayoutCompat>
+    
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            
+        </androidx.cardview.widget.CardView>
+    
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_transactions"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    />
+            
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Transactions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="View transactions, Issue Receipt or Refund."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                </androidx.appcompat.widget.LinearLayoutCompat>
+        
+            </androidx.appcompat.widget.LinearLayoutCompat>
+    
+        </androidx.cardview.widget.CardView>
+        
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_workroom"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+            
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Work Room"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="Manage Products, Variants, Units, Categories, Discounts, and etc."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                </androidx.appcompat.widget.LinearLayoutCompat>
+        
+            </androidx.appcompat.widget.LinearLayoutCompat>
+    
+        </androidx.cardview.widget.CardView>
+    
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_update"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    />
+            
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="Download latest records including workroom items, profile, configurations and etc."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                </androidx.appcompat.widget.LinearLayoutCompat>
+        
+            </androidx.appcompat.widget.LinearLayoutCompat>
+    
+        </androidx.cardview.widget.CardView>
+        
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_settings"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+            
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="Configure barcode scanner, printers, cash drawers, and any application configurations."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                </androidx.appcompat.widget.LinearLayoutCompat>
+        
+            </androidx.appcompat.widget.LinearLayoutCompat>
+    
+        </androidx.cardview.widget.CardView>
+    
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@null"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@mipmap/home_menu_logout"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
+            
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceHeadline6"
+                        android:text="Logout Now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="?attr/textAppearanceCaption"
+                        android:text="Logout to this device."
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            
+                </androidx.appcompat.widget.LinearLayoutCompat>
+        
+            </androidx.appcompat.widget.LinearLayoutCompat>
+    
+        </androidx.cardview.widget.CardView>
+        
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -6,4 +6,6 @@ package com.github.posko.feature.base
 interface BasePresenter<View : BaseView> {
 
     fun takeView(view : View)
+
+    fun destroy()
 }
