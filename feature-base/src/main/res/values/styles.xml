@@ -34,6 +34,17 @@
         <!--<item name="cornerRadius">10dp</item>-->
     </style>
     
+    <style name="PoskoAppTheme.Button.Flat" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorSecondary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="rippleColor">@color/light</item>
+        <item name="cornerRadius">0dp</item>
+    </style>
+    
+    
     <style name="PoskoAppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="hintTextColor">#adadad</item>
         <item name="boxStrokeColor">@color/material_textinputlayout_box_color</item>
