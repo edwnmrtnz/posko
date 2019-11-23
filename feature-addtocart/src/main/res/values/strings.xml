@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Add To Cart Feature</string>
+    
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addtocart_action_addtocart">Add to Cart</string>
+</resources>

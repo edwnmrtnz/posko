@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddToCartFragment">
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorOnBackgroundAlpha4" />
+    
+    <FrameLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llContentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="@color/colorSecondary"
+                android:textStyle="bold"
+                tools:text="₱14.00" />
+        
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                tools:text="555 Sardines in Tomato Sauce 155g" />
+        
+            <include layout="@layout/layout_sample_options" />
+    
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        
+    </FrameLayout>
+    
+    
+    <com.google.android.material.button.MaterialButton
+        android:text="@string/addtocart_action_addtocart"
+        android:textAllCaps="false"
+        android:insetBottom="0dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+
+</androidx.appcompat.widget.LinearLayoutCompat>

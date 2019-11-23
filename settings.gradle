@@ -1,4 +1,4 @@
-include ':app-pos',
+include ':app-pos', ':feature-addtocart',
         ':feature-base',
         ':posko-core',
         ':feature-splash',
